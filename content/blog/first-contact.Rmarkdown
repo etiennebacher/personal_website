@@ -30,7 +30,7 @@ Why is this package important? Your code must be reproducible, either for your c
 
 ## Import data
 
-We will use data contained in Excel (**`.xlsx`**) and text (**`.txt`**) files. You can find these files (and the full R script corresponding to this post) [here](https://github.com/etiennebacher/from-stata-to-r/tree/master/public/Data/first-contact). To import Excel data, we will need the **`readxl`** package. 
+We will use data contained in Excel (**`.xlsx`**) and text (**`.txt`**) files. You can find these files (and the full R script corresponding to this post) [here](https://github.com/etiennebacher/personal_website/tree/master/public/Data/first-contact). To import Excel data, we will need the **`readxl`** package. 
 
 ```{r}
 library(readxl)

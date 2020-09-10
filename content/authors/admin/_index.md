@@ -70,4 +70,4 @@ user_groups:
 
 I am a PhD student in the [Doctoral Team Unit ACROSS](https://sites.google.com/view/fredericdocquier/xingb-blog/across) at LISER, Luxembourg. I study the relationship between cross-border mobility, attitudes and political preferences.
 
-Besides working on this topic, I also enjoy programming with R by creating Shiny apps or packages that you can find on my [GitHub repo](https://github.com/etiennebacher/). I also write blog articles about R from time to time.
+Besides working on this topic, I also enjoy programming with R by creating Shiny apps or packages that you can find on my [GitHub repo](https://github.com/etiennebacher/). I also write blog articles about R from time to time, that you can find in the "Blog" tab above.

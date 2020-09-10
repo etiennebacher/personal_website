@@ -339,7 +339,7 @@ library(here)
 &lt;p&gt;Why is this package important? Your code must be reproducible, either for your current collaborators to work efficiently with you or for other people to check your code and to use it in the future. Using paths that work only for your computer (like &amp;ldquo;/home/Mr X/somefolder/somesubfolder/Project&amp;rdquo;) makes it longer and more annoying to use your code since it requires to manually change paths in order to import data or other files. The package &lt;strong&gt;&lt;code&gt;here&lt;/code&gt;&lt;/strong&gt; makes it much easier to reproduce your code since it automatically detects the path to access to your data. You only need to keep the same structure between R files and datasets. You will see in the next part how to use it.&lt;/p&gt;
 &lt;h2 id=&#34;import-data&#34;&gt;Import data&lt;/h2&gt;
 &lt;p&gt;We will use data contained in Excel (&lt;strong&gt;&lt;code&gt;.xlsx&lt;/code&gt;&lt;/strong&gt;) and text (&lt;strong&gt;&lt;code&gt;.txt&lt;/code&gt;&lt;/strong&gt;) files. You can find these files (and the full R script corresponding to this post) 
-&lt;a href=&#34;https://github.com/etiennebacher/from-stata-to-r/tree/master/public/Data/first-contact&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. To import Excel data, we will need the &lt;strong&gt;&lt;code&gt;readxl&lt;/code&gt;&lt;/strong&gt; package.&lt;/p&gt;
+&lt;a href=&#34;https://github.com/etiennebacher/personal_website/tree/master/public/Data/first-contact&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;. To import Excel data, we will need the &lt;strong&gt;&lt;code&gt;readxl&lt;/code&gt;&lt;/strong&gt; package.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(readxl)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We use the &lt;strong&gt;&lt;code&gt;read_excel&lt;/code&gt;&lt;/strong&gt; function of this package to import excel files and the function &lt;strong&gt;&lt;code&gt;read.table&lt;/code&gt;&lt;/strong&gt; (in base R) to import the data:&lt;/p&gt;
@@ -357,7 +357,7 @@ base4 &amp;lt;- read.table(here(&amp;quot;Bases_Used/Base_Text.txt&amp;quot;), h
 ```stata
 cd &#34;/path/to/Bases_Used&#34;
 import excel using Base_Excel, sheet(&#34;Base1&#34;) firstrow
-``` 
+```
 &lt;/details&gt;
 &lt;p&gt;As you can see, if your project is in a folder and if you stored you datasets in the Bases_Used subfolder, this code will work automatically since &lt;strong&gt;&lt;code&gt;here&lt;/code&gt;&lt;/strong&gt; detects the path. Now, we have stored the four datasets in four objects called &lt;strong&gt;&lt;code&gt;data.frames&lt;/code&gt;&lt;/strong&gt;. To me, this simple thing is an advantage on Stata where storing multiple datasets in the same time is not intuitive at all.&lt;/p&gt;
 &lt;h2 id=&#34;merge-dataframes&#34;&gt;Merge dataframes&lt;/h2&gt;
@@ -390,10 +390,10 @@ base_created
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;preserve
 
 *** Open base #2 and bind the rows
-clear all 
+clear all
 import excel using Base_Excel, sheet(&amp;quot;Base2&amp;quot;) firstrow
 tempfile base2
-save  `base2&#39; 
+save  `base2&#39;
 restore
 append using `base2&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -404,17 +404,17 @@ base_created
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # A tibble: 23 x 7
 ##     hhid indidy1 surname   name     gender  wage location
-##    &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;     &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;   
-##  1     1       1 BROWN     Robert        1  2000 France  
-##  2     1       2 JONES     Michael       1  2100 France  
-##  3     1       3 MILLER    William       1  2300 France  
-##  4     1       4 DAVIS     David         1  1800 France  
-##  5     2       1 RODRIGUEZ Mary          2  3600 England 
-##  6     2       2 MARTINEZ  Patricia      2  3500 England 
-##  7     2       3 WILSON    Linda         2  1900 England 
-##  8     2       4 ANDERSON  Richard       1  1900 England 
-##  9     3       1 THOMAS    Charles       1  1800 Spain   
-## 10     3       2 TAYLOR    Barbara       2  1890 Spain   
+##    &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;     &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;
+##  1     1       1 BROWN     Robert        1  2000 France
+##  2     1       2 JONES     Michael       1  2100 France
+##  3     1       3 MILLER    William       1  2300 France
+##  4     1       4 DAVIS     David         1  1800 France
+##  5     2       1 RODRIGUEZ Mary          2  3600 England
+##  6     2       2 MARTINEZ  Patricia      2  3500 England
+##  7     2       3 WILSON    Linda         2  1900 England
+##  8     2       4 ANDERSON  Richard       1  1900 England
+##  9     3       1 THOMAS    Charles       1  1800 Spain
+## 10     3       2 TAYLOR    Barbara       2  1890 Spain
 ## # … with 13 more rows
 &lt;/code&gt;&lt;/pre&gt;
 &lt;details&gt;
@@ -422,13 +422,13 @@ base_created
 &lt;/summary&gt;
 &lt;p&gt;
 ```stata
-preserve 
+preserve
 &lt;p&gt;*** Open base #3 and merge
 clear all
 cd ..\Bases_Used
 import excel using Base_Excel, sheet(&amp;ldquo;Base3&amp;rdquo;) firstrow
 tempfile base3
-save &lt;code&gt;base3&#39; restore  merge m:1 hhid using &lt;/code&gt;base3&amp;rsquo;
+save &lt;code&gt;base3&#39; restore merge m:1 hhid using &lt;/code&gt;base3&amp;rsquo;
 drop _merge&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;/details&amp;gt;
 
@@ -442,7 +442,7 @@ We now want to merge **`base_created`** with **`base4`**. The problem is that th
 colnames(base_created)[2] &amp;lt;- &amp;quot;indid&amp;quot;
 colnames(base4)[2] &amp;lt;- &amp;quot;indid&amp;quot;
 
-# create the column &amp;quot;year&amp;quot;, that will take the value 2019 
+# create the column &amp;quot;year&amp;quot;, that will take the value 2019
 # for base_created and 2020 for base4
 base_created$year &amp;lt;- 2019
 base4$year &amp;lt;- 2020
@@ -492,8 +492,8 @@ But we have many missing values for the new rows because **`base4`** only contai
 
 
 ```r
-base_created2 &amp;lt;- base_created2 %&amp;gt;% 
-  group_by(hhid, indid) %&amp;gt;% 
+base_created2 &amp;lt;- base_created2 %&amp;gt;%
+  group_by(hhid, indid) %&amp;gt;%
   arrange(hhid, indid, year) %&amp;gt;%
   ungroup()
 base_created2
@@ -516,7 +516,7 @@ base_created2
 &lt;p&gt;Notice that there are some &lt;strong&gt;&lt;code&gt;%&amp;gt;%&lt;/code&gt;&lt;/strong&gt; between the lines: it is a pipe and its function is to connect lines of code between them so that we don&amp;rsquo;t have to write &lt;strong&gt;&lt;code&gt;base_created2&lt;/code&gt;&lt;/strong&gt; every time. Now that our dataframe is arranged, we need to fill the missing values. Fortunately, these missing values do not change for an individual since they concern the gender, the location, the name and the surname. So basically, we can just take the value of the cell above (corresponding to year 2019) and replicate it in each cell (corresponding to year 2020):&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tidyr)
 base_created2 &amp;lt;- base_created2 %&amp;gt;%
-  fill(select_if(., ~ any(is.na(.))) %&amp;gt;% 
+  fill(select_if(., ~ any(is.na(.))) %&amp;gt;%
          names(),
        .direction = &#39;down&#39;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -543,22 +543,22 @@ foreach x of varlist surname name gender location {
 &lt;p&gt;Finally, we want the first three columns to be &lt;strong&gt;&lt;code&gt;hhid&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;indid&lt;/code&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;code&gt;year&lt;/code&gt;&lt;/strong&gt;, and we create a ID column named &lt;strong&gt;&lt;code&gt;hhind&lt;/code&gt;&lt;/strong&gt; which is just the union of &lt;strong&gt;&lt;code&gt;hhid&lt;/code&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;code&gt;indid&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;base_created2 &amp;lt;- base_created2 %&amp;gt;%
   select(hhid, indid, year, everything()) %&amp;gt;%
-  unite(hhind, c(hhid, indid), sep = &amp;quot;&amp;quot;, remove = FALSE) 
+  unite(hhind, c(hhid, indid), sep = &amp;quot;&amp;quot;, remove = FALSE)
 base_created2
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # A tibble: 46 x 9
 ##    hhind  hhid indid  year surname   name    gender  wage location
-##    &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;   
-##  1 11        1     1  2019 BROWN     Robert       1  2000 France  
-##  2 11        1     1  2020 BROWN     Robert       1  2136 France  
-##  3 12        1     2  2019 JONES     Michael      1  2100 France  
-##  4 12        1     2  2020 JONES     Michael      1  2362 France  
-##  5 13        1     3  2019 MILLER    William      1  2300 France  
-##  6 13        1     3  2020 MILLER    William      1  2384 France  
-##  7 14        1     4  2019 DAVIS     David        1  1800 France  
-##  8 14        1     4  2020 DAVIS     David        1  2090 France  
-##  9 21        2     1  2019 RODRIGUEZ Mary         2  3600 England 
-## 10 21        2     1  2020 RODRIGUEZ Mary         2  3784 England 
+##    &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;     &amp;lt;chr&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;
+##  1 11        1     1  2019 BROWN     Robert       1  2000 France
+##  2 11        1     1  2020 BROWN     Robert       1  2136 France
+##  3 12        1     2  2019 JONES     Michael      1  2100 France
+##  4 12        1     2  2020 JONES     Michael      1  2362 France
+##  5 13        1     3  2019 MILLER    William      1  2300 France
+##  6 13        1     3  2020 MILLER    William      1  2384 France
+##  7 14        1     4  2019 DAVIS     David        1  1800 France
+##  8 14        1     4  2020 DAVIS     David        1  2090 France
+##  9 21        2     1  2019 RODRIGUEZ Mary         2  3600 England
+## 10 21        2     1  2020 RODRIGUEZ Mary         2  3784 England
 ## # … with 36 more rows
 &lt;/code&gt;&lt;/pre&gt;
 &lt;details&gt;
@@ -566,9 +566,9 @@ base_created2
 &lt;/summary&gt;
 &lt;p&gt;
 ```stata
-egen hhind=group(hhid indid) 
-order hhind hhid indid year * 
-sort hhid indid year 
+egen hhind=group(hhid indid)
+order hhind hhid indid year *
+sort hhid indid year
 ```
 &lt;/details&gt;
 &lt;p&gt;That&amp;rsquo;s it, we now have the complete dataframe.&lt;/p&gt;
@@ -577,7 +577,7 @@ sort hhid indid year
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# display the unique values of the column &amp;quot;location&amp;quot;
 unique(base_created2$location)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;France&amp;quot;        &amp;quot;England&amp;quot;       &amp;quot;Spain&amp;quot;         &amp;quot;Italy&amp;quot;        
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;France&amp;quot;        &amp;quot;England&amp;quot;       &amp;quot;Spain&amp;quot;         &amp;quot;Italy&amp;quot;
 ## [5] &amp;quot;England_error&amp;quot; &amp;quot;Spain_error&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# correct the errors
@@ -630,7 +630,7 @@ base_created2 &amp;lt;- upData(base_created2, labels = var.labels)
 &lt;p&gt;
 ```stata
 label variable hhind &#34;individual&#39;s ID&#34;
-label variable indid &#34;household&#39;s ID&#34; 
+label variable indid &#34;household&#39;s ID&#34;
 label variable year &#34;year&#34;
 label variable hhid &#34;individual&#39;s ID in the household&#34;
 label variable surname &#34;Surname&#34;
@@ -643,10 +643,10 @@ label variable location &#34;household&#39;s location&#34;
 &lt;p&gt;We can see the result with:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;contents(base_created2)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
+&lt;pre&gt;&lt;code&gt;##
 ## Data frame:base_created2	46 observations and 9 variables    Maximum # NAs:0
-## 
-## 
+##
+##
 ##                                    Labels     Class   Storage
 ## hhind                     individual&#39;s ID character character
 ## hhid                       household&#39;s ID   integer   integer
@@ -666,7 +666,7 @@ label variable location &#34;household&#39;s location&#34;
 &lt;/summary&gt;
 &lt;p&gt;
 ```stata
-cd ..\Bases_Created  
+cd ..\Bases_Created
 export excel using &#34;modified_base.xls&#34;, replace
 ```
 &lt;/details&gt;
@@ -674,14 +674,14 @@ export excel using &#34;modified_base.xls&#34;, replace
 &lt;p&gt;First of all, if we want to check the number of people per location or gender and per year, we use the &lt;strong&gt;&lt;code&gt;table&lt;/code&gt;&lt;/strong&gt; function:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;table(base_created2$gender, base_created2$year)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##    
+&lt;pre&gt;&lt;code&gt;##
 ##     2019 2020
 ##   0    9    9
 ##   1   14   14
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;table(base_created2$location, base_created2$year)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##          
+&lt;pre&gt;&lt;code&gt;##
 ##           2019 2020
 ##   England    6    6
 ##   France    12   12
@@ -693,82 +693,82 @@ export excel using &#34;modified_base.xls&#34;, replace
 &lt;/summary&gt;
 &lt;p&gt;
 ```stata
-tab gender if year==2019  
-tab location if year==2019 
+tab gender if year==2019
+tab location if year==2019
 ```
 &lt;/details&gt;
 &lt;p&gt;To have more detailed statistics, you can use many functions. Here, we use the function &lt;strong&gt;&lt;code&gt;describe&lt;/code&gt;&lt;/strong&gt; from the &lt;strong&gt;&lt;code&gt;Hmisc&lt;/code&gt;&lt;/strong&gt; package&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;describe(base_created2)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## base_created2 
-## 
+&lt;pre&gt;&lt;code&gt;## base_created2
+##
 ##  9  Variables      46  Observations
 ## --------------------------------------------------------------------------------
-## hhind : individual&#39;s ID 
-##        n  missing distinct 
-##       46        0       23 
-## 
+## hhind : individual&#39;s ID
+##        n  missing distinct
+##       46        0       23
+##
 ## lowest : 11 12 13 14 21, highest: 71 72 81 82 83
 ## --------------------------------------------------------------------------------
-## hhid : household&#39;s ID 
-##        n  missing distinct     Info     Mean      Gmd 
-##       46        0        8    0.975    4.217    2.783 
-## 
+## hhid : household&#39;s ID
+##        n  missing distinct     Info     Mean      Gmd
+##       46        0        8    0.975    4.217    2.783
+##
 ## lowest : 1 2 3 4 5, highest: 4 5 6 7 8
-##                                                           
+##
 ## Value          1     2     3     4     5     6     7     8
 ## Frequency      8     8     4     2    10     4     4     6
 ## Proportion 0.174 0.174 0.087 0.043 0.217 0.087 0.087 0.130
 ## --------------------------------------------------------------------------------
-## indid : individual&#39;s ID in the household 
-##        n  missing distinct     Info     Mean      Gmd 
-##       46        0        5    0.923    2.217    1.306 
-## 
+## indid : individual&#39;s ID in the household
+##        n  missing distinct     Info     Mean      Gmd
+##       46        0        5    0.923    2.217    1.306
+##
 ## lowest : 1 2 3 4 5, highest: 1 2 3 4 5
-##                                         
+##
 ## Value          1     2     3     4     5
 ## Frequency     16    14     8     6     2
 ## Proportion 0.348 0.304 0.174 0.130 0.043
 ## --------------------------------------------------------------------------------
-## year 
-##        n  missing distinct     Info     Mean      Gmd 
-##       46        0        2     0.75     2020   0.5111 
-##                     
+## year
+##        n  missing distinct     Info     Mean      Gmd
+##       46        0        2     0.75     2020   0.5111
+##
 ## Value      2019 2020
 ## Frequency    23   23
 ## Proportion  0.5  0.5
 ## --------------------------------------------------------------------------------
-## surname 
-##        n  missing distinct 
-##       46        0       23 
-## 
-## lowest : ANDERSON BROWN    DAVIS    DOE      JACKSON 
-## highest: THOMAS   THOMPSON WHITE    WILLIAMS WILSON  
+## surname
+##        n  missing distinct
+##       46        0       23
+##
+## lowest : ANDERSON BROWN    DAVIS    DOE      JACKSON
+## highest: THOMAS   THOMPSON WHITE    WILLIAMS WILSON
 ## --------------------------------------------------------------------------------
-## name 
-##        n  missing distinct 
-##       46        0       23 
-## 
-## lowest : Barbara Charles Daniel  David   Donald 
+## name
+##        n  missing distinct
+##       46        0       23
+##
+## lowest : Barbara Charles Daniel  David   Donald
 ## highest: Richard Robert  Susan   Thomas  William
 ## --------------------------------------------------------------------------------
-## gender : 1 if male, 0 if female 
-##        n  missing distinct     Info      Sum     Mean      Gmd 
-##       46        0        2    0.715       28   0.6087    0.487 
-## 
+## gender : 1 if male, 0 if female
+##        n  missing distinct     Info      Sum     Mean      Gmd
+##       46        0        2    0.715       28   0.6087    0.487
+##
 ## --------------------------------------------------------------------------------
-## wage 
-##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##       46        0       37    0.998     2059    477.4     1627     1692 
-##      .25      .50      .75      .90      .95 
-##     1800     1901     2098     2373     3575 
-## 
+## wage
+##        n  missing distinct     Info     Mean      Gmd      .05      .10
+##       46        0       37    0.998     2059    477.4     1627     1692
+##      .25      .50      .75      .90      .95
+##     1800     1901     2098     2373     3575
+##
 ## lowest : 1397 1600 1608 1683 1690, highest: 2384 3500 3600 3782 3784
 ## --------------------------------------------------------------------------------
-## location : household&#39;s location 
-##        n  missing distinct 
-##       46        0        4 
-##                                           
+## location : household&#39;s location
+##        n  missing distinct
+##       46        0        4
+##
 ## Value      England  France   Italy   Spain
 ## Frequency       12      24       2       8
 ## Proportion   0.261   0.522   0.043   0.174
@@ -793,7 +793,7 @@ base_created2 %&amp;gt;%
 ##   &amp;lt;labelled&amp;gt; &amp;lt;dbl&amp;gt;
 ## 1 England    2452.
 ## 2 France     1935.
-## 3 Italy      1801 
+## 3 Italy      1801
 ## 4 Spain      1905.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;details&gt;
@@ -808,29 +808,29 @@ tabstat wage if year==2020, stats(N mean sd min max p25 p50 p75) by(location)
 &lt;h2 id=&#34;plots&#34;&gt;Plots&lt;/h2&gt;
 &lt;p&gt;Finally, we want to plot some data to include in our report or article (or anything else). &lt;strong&gt;&lt;code&gt;ggplot2&lt;/code&gt;&lt;/strong&gt; is THE reference to make plots with R. The &lt;strong&gt;&lt;code&gt;ggplot&lt;/code&gt;&lt;/strong&gt; function does not create a graph but tells what is the data you are going to use and the aesthetics (&lt;strong&gt;&lt;code&gt;aes&lt;/code&gt;&lt;/strong&gt;). Here, we want to display the wages in a histogram and to distinguish them per year. Therefore, we want to fill the bars according to the year. To precise the type of graph we want, we add &lt;strong&gt;&lt;code&gt;+ geom_histogram()&lt;/code&gt;&lt;/strong&gt; after &lt;strong&gt;&lt;code&gt;ggplot&lt;/code&gt;&lt;/strong&gt;. You may change the number of &lt;strong&gt;&lt;code&gt;bins&lt;/code&gt;&lt;/strong&gt; to have a more precise histogram.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)
-hist1 &amp;lt;- ggplot(data = base_created2, 
+hist1 &amp;lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
 &lt;p&gt;
 ```stata
-histogram wage if year==2019, saving(Hist1, replace) bin(10) freq title(&#34;Year 2019&#34;) ytitle(&#34;Frequency&#34;) 
+histogram wage if year==2019, saving(Hist1, replace) bin(10) freq title(&#34;Year 2019&#34;) ytitle(&#34;Frequency&#34;)
 histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title(&#34;Year 2020&#34;) ytitle(&#34;Frequency&#34;)
 ```
 &lt;/details&gt;
 &lt;p&gt;If you prefer one histogram per year, you can use the &lt;strong&gt;&lt;code&gt;facet_wrap()&lt;/code&gt;&lt;/strong&gt; argument, as below.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist2 &amp;lt;- ggplot(data = base_created2, 
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist2 &amp;lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;

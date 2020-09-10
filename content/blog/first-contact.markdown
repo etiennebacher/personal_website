@@ -4,16 +4,16 @@ title: "First contact with the data on R"
 author: "Etienne Bacher"
 draft: true
 tags: ["R", "Stata"]
-output: 
+output:
   blogdown::html_page:
-    toc: true 
+    toc: true
 ---
 
 <p style="color:rgb(127, 165, 179)"> <b> Note: </b>  </p> <p style="color:rgb(127, 165, 179)">In this and future articles, you will see some arrows below R code. If you click on it, it will display the Stata code equivalent to the R code displayed. However, since those are two different softwares, they are not completely equivalent and some of the Stata code may not fully correspond to the R code. Consider it more like a reference point not to be lost rather than like an exact equivalent. </p>
 
 <br>
 
-In this post, you will see how to import and treat data, make descriptive statistics and a few plots. I will also show you a personal method to organize one's work. 
+In this post, you will see how to import and treat data, make descriptive statistics and a few plots. I will also show you a personal method to organize one's work.
 
 
 ## Files used and organization of the project
@@ -31,14 +31,14 @@ Why is this package important? Your code must be reproducible, either for your c
 
 ## Import data
 
-We will use data contained in Excel (**`.xlsx`**) and text (**`.txt`**) files. You can find these files (and the full R script corresponding to this post) [here](https://github.com/etiennebacher/from-stata-to-r/tree/master/public/Data/first-contact). To import Excel data, we will need the **`readxl`** package. 
+We will use data contained in Excel (**`.xlsx`**) and text (**`.txt`**) files. You can find these files (and the full R script corresponding to this post) [here](https://github.com/etiennebacher/personal_website/tree/master/public/Data/first-contact). To import Excel data, we will need the **`readxl`** package.
 
 
 ```r
 library(readxl)
 ```
 
-We use the **`read_excel`** function of this package to import excel files and the function **`read.table`** (in base R) to import the data: 
+We use the **`read_excel`** function of this package to import excel files and the function **`read.table`** (in base R) to import the data:
 
 <!-- La partie qui suit doit être visible pour correspondre à ce que je dis mais ne doit pas être exécutée car pas les bons chemins d'accès -->
 
@@ -58,7 +58,7 @@ base4 <- read.table(here("Bases_Used/Base_Text.txt"), header = TRUE)
 ```stata
 cd "/path/to/Bases_Used"
 import excel using Base_Excel, sheet("Base1") firstrow
-``` 
+```
 </details>
 
 As you can see, if your project is in a folder and if you stored you datasets in the Bases_Used subfolder, this code will work automatically since **`here`** detects the path. Now, we have stored the four datasets in four objects called **`data.frames`**. To me, this simple thing is an advantage on Stata where storing multiple datasets in the same time is not intuitive at all.
@@ -103,13 +103,13 @@ base_created
 preserve
 
 *** Open base #2 and bind the rows
-clear all 
+clear all
 import excel using Base_Excel, sheet("Base2") firstrow
 tempfile base2
-save  `base2' 
+save  `base2'
 restore
 append using `base2'
-``` 
+```
 </details>
 
 As you can see, we obtain a dataframe with 6 columns (like each table separately) and 23 rows: 18 in the first table, 5 in the second table. Now, we merge this dataframe with **`base3`**. **`base_created`** and **`base3`** only have one column in common (**`hhid`**) so we will need to specify that we want to merge these two bases by this column:
@@ -123,17 +123,17 @@ base_created
 ```
 ## # A tibble: 23 x 7
 ##     hhid indidy1 surname   name     gender  wage location
-##    <dbl>   <dbl> <chr>     <chr>     <dbl> <dbl> <chr>   
-##  1     1       1 BROWN     Robert        1  2000 France  
-##  2     1       2 JONES     Michael       1  2100 France  
-##  3     1       3 MILLER    William       1  2300 France  
-##  4     1       4 DAVIS     David         1  1800 France  
-##  5     2       1 RODRIGUEZ Mary          2  3600 England 
-##  6     2       2 MARTINEZ  Patricia      2  3500 England 
-##  7     2       3 WILSON    Linda         2  1900 England 
-##  8     2       4 ANDERSON  Richard       1  1900 England 
-##  9     3       1 THOMAS    Charles       1  1800 Spain   
-## 10     3       2 TAYLOR    Barbara       2  1890 Spain   
+##    <dbl>   <dbl> <chr>     <chr>     <dbl> <dbl> <chr>
+##  1     1       1 BROWN     Robert        1  2000 France
+##  2     1       2 JONES     Michael       1  2100 France
+##  3     1       3 MILLER    William       1  2300 France
+##  4     1       4 DAVIS     David         1  1800 France
+##  5     2       1 RODRIGUEZ Mary          2  3600 England
+##  6     2       2 MARTINEZ  Patricia      2  3500 England
+##  7     2       3 WILSON    Linda         2  1900 England
+##  8     2       4 ANDERSON  Richard       1  1900 England
+##  9     3       1 THOMAS    Charles       1  1800 Spain
+## 10     3       2 TAYLOR    Barbara       2  1890 Spain
 ## # … with 13 more rows
 ```
 
@@ -142,17 +142,17 @@ base_created
 </summary>
 <p>
 ```stata
-preserve 
+preserve
 
 *** Open base #3 and merge
 clear all
-cd ..\Bases_Used 
+cd ..\Bases_Used
 import excel using Base_Excel, sheet("Base3") firstrow
 tempfile base3
 save `base3'
-restore 
-merge m:1 hhid using `base3' 
-drop _merge 
+restore
+merge m:1 hhid using `base3'
+drop _merge
 ```
 </details>
 
@@ -166,7 +166,7 @@ We now want to merge **`base_created`** with **`base4`**. The problem is that th
 colnames(base_created)[2] <- "indid"
 colnames(base4)[2] <- "indid"
 
-# create the column "year", that will take the value 2019 
+# create the column "year", that will take the value 2019
 # for base_created and 2020 for base4
 base_created$year <- 2019
 base4$year <- 2020
@@ -203,30 +203,30 @@ base_created2
 <p>
 ```stata
 
-rename indidy1 indid 
-gen year=2019 
-preserve 
+rename indidy1 indid
+gen year=2019
+preserve
 
 * Open base #4 and merge
 clear all
-import delimited Base_Text.txt 
-rename indidy2 indid 
+import delimited Base_Text.txt
+rename indidy2 indid
 gen year=2020
 tempfile base4
 save `base4'
-restore 
+restore
 
 merge 1:1 hhid indid year using `base4'
 drop _merge
-``` 
+```
 </details>
 
 But we have many missing values for the new rows because **`base4`** only contained three columns. We want to have a data frame arranged by household then by individual and finally by year. Using only **`dplyr`** functions, we can do:
 
 
 ```r
-base_created2 <- base_created2 %>% 
-  group_by(hhid, indid) %>% 
+base_created2 <- base_created2 %>%
+  group_by(hhid, indid) %>%
   arrange(hhid, indid, year) %>%
   ungroup()
 base_created2
@@ -255,7 +255,7 @@ Notice that there are some **`%>%`** between the lines: it is a pipe and its fun
 ```r
 library(tidyr)
 base_created2 <- base_created2 %>%
-  fill(select_if(., ~ any(is.na(.))) %>% 
+  fill(select_if(., ~ any(is.na(.))) %>%
          names(),
        .direction = 'down')
 ```
@@ -288,24 +288,24 @@ Finally, we want the first three columns to be **`hhid`**, **`indid`** and **`ye
 ```r
 base_created2 <- base_created2 %>%
   select(hhid, indid, year, everything()) %>%
-  unite(hhind, c(hhid, indid), sep = "", remove = FALSE) 
+  unite(hhind, c(hhid, indid), sep = "", remove = FALSE)
 base_created2
 ```
 
 ```
 ## # A tibble: 46 x 9
 ##    hhind  hhid indid  year surname   name    gender  wage location
-##    <chr> <dbl> <dbl> <dbl> <chr>     <chr>    <dbl> <dbl> <chr>   
-##  1 11        1     1  2019 BROWN     Robert       1  2000 France  
-##  2 11        1     1  2020 BROWN     Robert       1  2136 France  
-##  3 12        1     2  2019 JONES     Michael      1  2100 France  
-##  4 12        1     2  2020 JONES     Michael      1  2362 France  
-##  5 13        1     3  2019 MILLER    William      1  2300 France  
-##  6 13        1     3  2020 MILLER    William      1  2384 France  
-##  7 14        1     4  2019 DAVIS     David        1  1800 France  
-##  8 14        1     4  2020 DAVIS     David        1  2090 France  
-##  9 21        2     1  2019 RODRIGUEZ Mary         2  3600 England 
-## 10 21        2     1  2020 RODRIGUEZ Mary         2  3784 England 
+##    <chr> <dbl> <dbl> <dbl> <chr>     <chr>    <dbl> <dbl> <chr>
+##  1 11        1     1  2019 BROWN     Robert       1  2000 France
+##  2 11        1     1  2020 BROWN     Robert       1  2136 France
+##  3 12        1     2  2019 JONES     Michael      1  2100 France
+##  4 12        1     2  2020 JONES     Michael      1  2362 France
+##  5 13        1     3  2019 MILLER    William      1  2300 France
+##  6 13        1     3  2020 MILLER    William      1  2384 France
+##  7 14        1     4  2019 DAVIS     David        1  1800 France
+##  8 14        1     4  2020 DAVIS     David        1  2090 France
+##  9 21        2     1  2019 RODRIGUEZ Mary         2  3600 England
+## 10 21        2     1  2020 RODRIGUEZ Mary         2  3784 England
 ## # … with 36 more rows
 ```
 
@@ -314,13 +314,13 @@ base_created2
 </summary>
 <p>
 ```stata
-egen hhind=group(hhid indid) 
-order hhind hhid indid year * 
-sort hhid indid year 
+egen hhind=group(hhid indid)
+order hhind hhid indid year *
+sort hhid indid year
 ```
 </details>
 
-That's it, we now have the complete dataframe. 
+That's it, we now have the complete dataframe.
 
 
 ## Clean the data
@@ -334,7 +334,7 @@ unique(base_created2$location)
 ```
 
 ```
-## [1] "France"        "England"       "Spain"         "Italy"        
+## [1] "France"        "England"       "Spain"         "Italy"
 ## [5] "England_error" "Spain_error"
 ```
 
@@ -402,7 +402,7 @@ base_created2 <- upData(base_created2, labels = var.labels)
 <p>
 ```stata
 label variable hhind "individual's ID"
-label variable indid "household's ID" 
+label variable indid "household's ID"
 label variable year "year"
 label variable hhid "individual's ID in the household"
 label variable surname "Surname"
@@ -413,7 +413,7 @@ label variable location "household's location"
 ```
 </details>
 
-We can see the result with: 
+We can see the result with:
 
 
 ```r
@@ -421,10 +421,10 @@ contents(base_created2)
 ```
 
 ```
-## 
+##
 ## Data frame:base_created2	46 observations and 9 variables    Maximum # NAs:0
-## 
-## 
+##
+##
 ##                                    Labels     Class   Storage
 ## hhind                     individual's ID character character
 ## hhid                       household's ID   integer   integer
@@ -449,7 +449,7 @@ write.xlsx(base_created2, file = here("Bases_Created/modified_base.xlsx")
 </summary>
 <p>
 ```stata
-cd ..\Bases_Created  
+cd ..\Bases_Created
 export excel using "modified_base.xls", replace
 ```
 </details>
@@ -465,7 +465,7 @@ table(base_created2$gender, base_created2$year)
 ```
 
 ```
-##    
+##
 ##     2019 2020
 ##   0    9    9
 ##   1   14   14
@@ -476,7 +476,7 @@ table(base_created2$location, base_created2$year)
 ```
 
 ```
-##          
+##
 ##           2019 2020
 ##   England    6    6
 ##   France    12   12
@@ -489,8 +489,8 @@ table(base_created2$location, base_created2$year)
 </summary>
 <p>
 ```stata
-tab gender if year==2019  
-tab location if year==2019 
+tab gender if year==2019
+tab location if year==2019
 ```
 </details>
 
@@ -502,75 +502,75 @@ describe(base_created2)
 ```
 
 ```
-## base_created2 
-## 
+## base_created2
+##
 ##  9  Variables      46  Observations
 ## --------------------------------------------------------------------------------
-## hhind : individual's ID 
-##        n  missing distinct 
-##       46        0       23 
-## 
+## hhind : individual's ID
+##        n  missing distinct
+##       46        0       23
+##
 ## lowest : 11 12 13 14 21, highest: 71 72 81 82 83
 ## --------------------------------------------------------------------------------
-## hhid : household's ID 
-##        n  missing distinct     Info     Mean      Gmd 
-##       46        0        8    0.975    4.217    2.783 
-## 
+## hhid : household's ID
+##        n  missing distinct     Info     Mean      Gmd
+##       46        0        8    0.975    4.217    2.783
+##
 ## lowest : 1 2 3 4 5, highest: 4 5 6 7 8
-##                                                           
+##
 ## Value          1     2     3     4     5     6     7     8
 ## Frequency      8     8     4     2    10     4     4     6
 ## Proportion 0.174 0.174 0.087 0.043 0.217 0.087 0.087 0.130
 ## --------------------------------------------------------------------------------
-## indid : individual's ID in the household 
-##        n  missing distinct     Info     Mean      Gmd 
-##       46        0        5    0.923    2.217    1.306 
-## 
+## indid : individual's ID in the household
+##        n  missing distinct     Info     Mean      Gmd
+##       46        0        5    0.923    2.217    1.306
+##
 ## lowest : 1 2 3 4 5, highest: 1 2 3 4 5
-##                                         
+##
 ## Value          1     2     3     4     5
 ## Frequency     16    14     8     6     2
 ## Proportion 0.348 0.304 0.174 0.130 0.043
 ## --------------------------------------------------------------------------------
-## year 
-##        n  missing distinct     Info     Mean      Gmd 
-##       46        0        2     0.75     2020   0.5111 
-##                     
+## year
+##        n  missing distinct     Info     Mean      Gmd
+##       46        0        2     0.75     2020   0.5111
+##
 ## Value      2019 2020
 ## Frequency    23   23
 ## Proportion  0.5  0.5
 ## --------------------------------------------------------------------------------
-## surname 
-##        n  missing distinct 
-##       46        0       23 
-## 
-## lowest : ANDERSON BROWN    DAVIS    DOE      JACKSON 
-## highest: THOMAS   THOMPSON WHITE    WILLIAMS WILSON  
+## surname
+##        n  missing distinct
+##       46        0       23
+##
+## lowest : ANDERSON BROWN    DAVIS    DOE      JACKSON
+## highest: THOMAS   THOMPSON WHITE    WILLIAMS WILSON
 ## --------------------------------------------------------------------------------
-## name 
-##        n  missing distinct 
-##       46        0       23 
-## 
-## lowest : Barbara Charles Daniel  David   Donald 
+## name
+##        n  missing distinct
+##       46        0       23
+##
+## lowest : Barbara Charles Daniel  David   Donald
 ## highest: Richard Robert  Susan   Thomas  William
 ## --------------------------------------------------------------------------------
-## gender : 1 if male, 0 if female 
-##        n  missing distinct     Info      Sum     Mean      Gmd 
-##       46        0        2    0.715       28   0.6087    0.487 
-## 
+## gender : 1 if male, 0 if female
+##        n  missing distinct     Info      Sum     Mean      Gmd
+##       46        0        2    0.715       28   0.6087    0.487
+##
 ## --------------------------------------------------------------------------------
-## wage 
-##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##       46        0       37    0.998     2059    477.4     1627     1692 
-##      .25      .50      .75      .90      .95 
-##     1800     1901     2098     2373     3575 
-## 
+## wage
+##        n  missing distinct     Info     Mean      Gmd      .05      .10
+##       46        0       37    0.998     2059    477.4     1627     1692
+##      .25      .50      .75      .90      .95
+##     1800     1901     2098     2373     3575
+##
 ## lowest : 1397 1600 1608 1683 1690, highest: 2384 3500 3600 3782 3784
 ## --------------------------------------------------------------------------------
-## location : household's location 
-##        n  missing distinct 
-##       46        0        4 
-##                                           
+## location : household's location
+##        n  missing distinct
+##       46        0        4
+##
 ## Value      England  France   Italy   Spain
 ## Frequency       12      24       2       8
 ## Proportion   0.261   0.522   0.043   0.174
@@ -602,7 +602,7 @@ base_created2 %>%
 ##   <labelled> <dbl>
 ## 1 England    2452.
 ## 2 France     1935.
-## 3 Italy      1801 
+## 3 Italy      1801
 ## 4 Spain      1905.
 ```
 
@@ -618,25 +618,25 @@ tabstat wage if year==2020, stats(N mean sd min max p25 p50 p75) by(location)
 
 ## Plots
 
-Finally, we want to plot some data to include in our report or article (or anything else). **`ggplot2`** is THE reference to make plots with R. The **`ggplot`** function does not create a graph but tells what is the data you are going to use and the aesthetics (**`aes`**). Here, we want to display the wages in a histogram and to distinguish them per year. Therefore, we want to fill the bars according to the year. To precise the type of graph we want, we add **`+ geom_histogram()`** after **`ggplot`**. You may change the number of **`bins`** to have a more precise histogram. 
+Finally, we want to plot some data to include in our report or article (or anything else). **`ggplot2`** is THE reference to make plots with R. The **`ggplot`** function does not create a graph but tells what is the data you are going to use and the aesthetics (**`aes`**). Here, we want to display the wages in a histogram and to distinguish them per year. Therefore, we want to fill the bars according to the year. To precise the type of graph we want, we add **`+ geom_histogram()`** after **`ggplot`**. You may change the number of **`bins`** to have a more precise histogram.
 
 
 ```r
 library(ggplot2)
-hist1 <- ggplot(data = base_created2, 
+hist1 <- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1
 ```
 
-<img src="/posts/first-contact_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+<img src="/blog/first-contact_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 
 <details>
 <summary> Stata
 </summary>
 <p>
 ```stata
-histogram wage if year==2019, saving(Hist1, replace) bin(10) freq title("Year 2019") ytitle("Frequency") 
+histogram wage if year==2019, saving(Hist1, replace) bin(10) freq title("Year 2019") ytitle("Frequency")
 histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title("Year 2020") ytitle("Frequency")
 ```
 </details>
@@ -645,14 +645,14 @@ If you prefer one histogram per year, you can use the **`facet_wrap()`** argumen
 
 
 ```r
-hist2 <- ggplot(data = base_created2, 
+hist2 <- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2
 ```
 
-<img src="/posts/first-contact_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+<img src="/blog/first-contact_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
 <details>
 <summary> Stata
@@ -663,7 +663,7 @@ graph combine Hist1.gph Hist2.gph, col(2) xsize(10) ysize(5) iscale(1.5) title("
 ```
 </details>
 
-Finally, you may want to export these graphs. To do so, we use **`ggsave`** (you can replace .pdf by .eps or .png if you want): 
+Finally, you may want to export these graphs. To do so, we use **`ggsave`** (you can replace .pdf by .eps or .png if you want):
 
 
 ```r
