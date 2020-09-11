@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/experience/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url>
