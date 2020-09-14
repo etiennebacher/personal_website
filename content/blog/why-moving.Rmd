@@ -2,7 +2,7 @@
 date: "2019-12-01"
 title: "Why you should move from Stata to R"
 author: "Etienne Bacher"
-draft: true
+draft: no
 tags: ["R", "Stata"]
 output: 
   hugodown::md_document:

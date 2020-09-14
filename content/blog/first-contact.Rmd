@@ -2,7 +2,7 @@
 date: "2020-01-22"
 title: "First contact with the data on R"
 author: "Etienne Bacher"
-draft: true
+draft: no
 tags: ["R", "Stata"]
 output: 
   hugodown::md_document:
