@@ -1,0 +1,19 @@
+# Theme metadata
+name = "etienne"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#4682B4"
+
+# Menu
+menu_primary = "#4682B4"
+menu_text = "#FFFFFF"
+menu_text_active = "#FFFFFF"
+menu_title = "#FFFFFF"
+
+# Backgrounds
+background = "#FFFFFF"
+home_section_odd = "#FFFFFF"
+home_section_even = "#FFFFFF"
