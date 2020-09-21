@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Etienne Bacher</title>
+    <title>Blog | Etienne Bacher</title>
     <link>/blog/</link>
       <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
-    <description>Posts</description>
+    <description>Blog</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright><lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Posts</title>
+      <title>Blog</title>
       <link>/blog/</link>
     </image>
     
     <item>
       <title>Writing a Master&#39;s thesis with R Markdown and Bookdown</title>
-      <link>/blog/tips-and-tricks-r-markdown/</link>
+      <link>/blog/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/tips-and-tricks-r-markdown/</guid>
+      <guid>/blog/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</guid>
       <description>
 
 
@@ -199,9 +199,9 @@ Bla bla bla...
     
     <item>
       <title>What to do when your code doesn&#39;t work?</title>
-      <link>/blog/what-to-do-when-your-code-does-not-work/</link>
+      <link>/blog/code-doesnt-work/what-to-do-when-your-code-does-not-work/</link>
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/what-to-do-when-your-code-does-not-work/</guid>
+      <guid>/blog/code-doesnt-work/what-to-do-when-your-code-does-not-work/</guid>
       <description>
 
 
@@ -262,9 +262,9 @@ Bla bla bla...
     
     <item>
       <title>My application for the Shiny Contest (2020)</title>
-      <link>/blog/my-app-for-shiny-contest-2020/</link>
+      <link>/blog/my-shiny-app/my-shiny-app/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/my-app-for-shiny-contest-2020/</guid>
+      <guid>/blog/my-shiny-app/my-shiny-app/</guid>
       <description>
 
 
@@ -284,9 +284,9 @@ Bla bla bla...
     
     <item>
       <title>My favorite shortcuts in RStudio</title>
-      <link>/blog/my-favorite-shortcuts-in-rstudio/</link>
+      <link>/blog/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/my-favorite-shortcuts-in-rstudio/</guid>
+      <guid>/blog/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</guid>
       <description>
 
 
@@ -337,9 +337,9 @@ Other useful tools:&lt;/p&gt;
     
     <item>
       <title>First contact with the data on R</title>
-      <link>/blog/first-contact/</link>
+      <link>/blog/first-contact/first-contact/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/first-contact/</guid>
+      <guid>/blog/first-contact/first-contact/</guid>
       <description>
 
 
@@ -782,7 +782,7 @@ hist1 &amp;lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
@@ -796,7 +796,7 @@ histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title(&amp;quo
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
@@ -818,9 +818,9 @@ hist2&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Why you should move from Stata to R</title>
-      <link>/blog/why-moving/</link>
+      <link>/blog/why-moving/why-moving/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/blog/why-moving/</guid>
+      <guid>/blog/why-moving/why-moving/</guid>
       <description>
 
 

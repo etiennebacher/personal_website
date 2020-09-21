@@ -14,9 +14,9 @@
     
     <item>
       <title>First contact with the data on R</title>
-      <link>/blog/first-contact/</link>
+      <link>/blog/first-contact/first-contact/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/first-contact/</guid>
+      <guid>/blog/first-contact/first-contact/</guid>
       <description>
 
 
@@ -459,7 +459,7 @@ hist1 &amp;lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
@@ -473,7 +473,7 @@ histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title(&amp;quo
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
@@ -495,9 +495,9 @@ hist2&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Why you should move from Stata to R</title>
-      <link>/blog/why-moving/</link>
+      <link>/blog/why-moving/why-moving/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/blog/why-moving/</guid>
+      <guid>/blog/why-moving/why-moving/</guid>
       <description>
 
 
