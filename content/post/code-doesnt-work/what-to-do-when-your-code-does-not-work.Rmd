@@ -2,7 +2,7 @@
 title: What to do when your code doesn't work?
 author: Etienne Bacher
 date: '2020-05-22'
-last_mod: '2020-05-22'
+lastmod: '2020-05-22'
 categories: []
 tags:
   - R

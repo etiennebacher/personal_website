@@ -7,10 +7,10 @@
   name = "Home"
   url = "/"
   weight = 10
-  
+
 [[main]]
   name = "Blog"
-  url = "/post"
+  url = "/blog"
   weight = 20
 
 # Link to a PDF of your resume/CV from the menu.
