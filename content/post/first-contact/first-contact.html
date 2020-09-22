@@ -4,12 +4,22 @@ title: "First contact with the data on R"
 author: "Etienne Bacher"
 summary: A blog post describing the first steps of data cleaning and analysis using R.
 tags: ["R", "Stata"]
-output: 
-  hugodown::md_document:
-    toc: true 
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 
+<div id="TOC">
+<ul>
+<li><a href="#files-used-and-organization-of-the-project">Files used and organization of the project</a></li>
+<li><a href="#import-data">Import data</a></li>
+<li><a href="#merge-dataframes">Merge dataframes</a></li>
+<li><a href="#clean-the-data">Clean the data</a></li>
+<li><a href="#descriptive-statistics">Descriptive Statistics</a></li>
+<li><a href="#plots">Plots</a></li>
+</ul>
+</div>
 
 <p style="color:rgb(127, 165, 179)">
 <b> Note: </b>
@@ -450,7 +460,7 @@ hist1 &lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1</code></pre>
-<p><img src="/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="/post/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <details>
 <summary> Stata
 </summary>
@@ -464,7 +474,7 @@ histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title(&quot;Ye
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2</code></pre>
-<p><img src="/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="/post/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <details>
 <summary> Stata
 </summary>

@@ -6,7 +6,9 @@ summary: A presentation of the application I submitted to the Shiny Contest 2nd 
 categories: []
 tags:
   - R
-draft: no
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 One of the greatest things about R is the possibility to build websites quite easily with R Shiny. I started to create apps with Shiny almost immediately after having discovered it. This was in May last year and two months later I thought it would be a great idea to build an app to treat more easily World Bank data. Indeed, in my field, World Development Indicators (WDI) are often used and I thought it would be useful to have a graphical interface where we can import and treat these indicators.

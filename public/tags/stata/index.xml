@@ -19,6 +19,16 @@
       <guid>/post/first-contact/first-contact/</guid>
       <description>
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#files-used-and-organization-of-the-project&#34;&gt;Files used and organization of the project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#import-data&#34;&gt;Import data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#merge-dataframes&#34;&gt;Merge dataframes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#clean-the-data&#34;&gt;Clean the data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#descriptive-statistics&#34;&gt;Descriptive Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plots&#34;&gt;Plots&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p style=&#34;color:rgb(127, 165, 179)&#34;&gt;
 &lt;b&gt; Note: &lt;/b&gt;
@@ -459,7 +469,7 @@ hist1 &amp;lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
@@ -473,7 +483,7 @@ histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title(&amp;quo
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;

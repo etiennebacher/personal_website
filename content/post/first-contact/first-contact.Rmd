@@ -4,9 +4,9 @@ title: "First contact with the data on R"
 author: "Etienne Bacher"
 summary: A blog post describing the first steps of data cleaning and analysis using R.
 tags: ["R", "Stata"]
-output: 
-  hugodown::md_document:
-    toc: true 
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 <p style="color:rgb(127, 165, 179)"> <b> Note: </b>  </p> <p style="color:rgb(127, 165, 179)">In this and future articles, you will see some arrows below R code. If you click on it, it will display the Stata code equivalent to the R code displayed. However, since those are two different softwares, they are not completely equivalent and some of the Stata code may not fully correspond to the R code. Consider it more like a reference point not to be lost rather than like an exact equivalent. </p>

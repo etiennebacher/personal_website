@@ -19,6 +19,15 @@
       <guid>/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</guid>
       <description>
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#why-bookdown&#34;&gt;Why &lt;code&gt;bookdown&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex-packages-and-commands&#34;&gt;LaTeX packages and commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#titlepage-acknowledgements-and-abstract&#34;&gt;Titlepage, acknowledgements and abstract&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#include-latex-files-in-yaml&#34;&gt;Include LaTeX files in YAML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;I finished my Master’s thesis very recently, and I wrote it with R Markdown, and more precisely with the &lt;code&gt;bookdown&lt;/code&gt; package. It was really comfortable to do absolutely everything with R: data treatment, use of econometric methods, redaction with chunk of codes, and even the slides for the presentation! However, I have also spent a non-negligible part of my time trying to have a correct layout, essentially for the first pages. I found that some things were not as easy to do as they should be. This post contains some solutions to these problems.&lt;/p&gt;
 &lt;div id=&#34;why-bookdown&#34; class=&#34;section level2&#34;&gt;

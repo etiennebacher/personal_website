@@ -19,6 +19,15 @@
       <guid>/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</guid>
       <description>
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#why-bookdown&#34;&gt;Why &lt;code&gt;bookdown&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex-packages-and-commands&#34;&gt;LaTeX packages and commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#titlepage-acknowledgements-and-abstract&#34;&gt;Titlepage, acknowledgements and abstract&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#include-latex-files-in-yaml&#34;&gt;Include LaTeX files in YAML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;I finished my Master’s thesis very recently, and I wrote it with R Markdown, and more precisely with the &lt;code&gt;bookdown&lt;/code&gt; package. It was really comfortable to do absolutely everything with R: data treatment, use of econometric methods, redaction with chunk of codes, and even the slides for the presentation! However, I have also spent a non-negligible part of my time trying to have a correct layout, essentially for the first pages. I found that some things were not as easy to do as they should be. This post contains some solutions to these problems.&lt;/p&gt;
 &lt;div id=&#34;why-bookdown&#34; class=&#34;section level2&#34;&gt;
@@ -204,6 +213,16 @@ Bla bla bla...
       <guid>/post/code-doesnt-work/what-to-do-when-your-code-does-not-work/</guid>
       <description>
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#read-the-error-message&#34;&gt;Read the error message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#search-on-stackoverflow-and-rstudio-community&#34;&gt;Search on StackOverflow and RStudio Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#search-on-github&#34;&gt;Search on Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#post-my-question-online---part-1&#34;&gt;Post my question online - Part 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#post-my-question-online---part-2&#34;&gt;Post my question online - Part 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#additional-resources&#34;&gt;Additional resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;As &lt;a href=&#34;https://rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/&#34;&gt;Jenny Bryan said&lt;/a&gt;, one of the first things people do when there is a problem with the code is run it a second time. But in 95% of the cases (in my small programming experience), this does not solve the problem, and I realized I developed a small pattern of reactions when I am in this situation.&lt;/p&gt;
 &lt;div id=&#34;read-the-error-message&#34; class=&#34;section level3&#34;&gt;
@@ -289,6 +308,18 @@ Bla bla bla...
       <guid>/post/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</guid>
       <description>
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshiftenter-run-the-whole-script&#34;&gt;“Ctrl+Shift+Enter”: run the whole script&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshiftf10-restart-r-session&#34;&gt;“Ctrl+Shift+F10”: restart R session&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshiftk-knit-markdown-documents&#34;&gt;“Ctrl+Shift+K”: knit Markdown documents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlaltb-run-the-script-from-the-beginning-to-where-i-am&#34;&gt;“Ctrl+Alt+B”: run the script from the beginning to where I am&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshifta-good-alignment&#34;&gt;“Ctrl+Shift+A”: good alignment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshiftr-new-section-label&#34;&gt;“Ctrl+Shift+R”: new section label&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshiftn-new-file&#34;&gt;“Ctrl+Shift+N”: new file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctrlshiftc-comment-and-un-comment-lines-of-code&#34;&gt;“Ctrl+Shift+C”: comment and un-comment lines of code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Currently working on my master’s thesis, I spend almost half on my day on R (the other half being spent reading articles). I have learnt a few very useful shortcuts by reading blog posts or free R books here and there and I have decided to make a small list of those I use most.&lt;/p&gt;
 &lt;div id=&#34;ctrlshiftenter-run-the-whole-script&#34; class=&#34;section level2&#34;&gt;
@@ -342,6 +373,16 @@ Other useful tools:&lt;/p&gt;
       <guid>/post/first-contact/first-contact/</guid>
       <description>
 
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#files-used-and-organization-of-the-project&#34;&gt;Files used and organization of the project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#import-data&#34;&gt;Import data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#merge-dataframes&#34;&gt;Merge dataframes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#clean-the-data&#34;&gt;Clean the data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#descriptive-statistics&#34;&gt;Descriptive Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plots&#34;&gt;Plots&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 
 &lt;p style=&#34;color:rgb(127, 165, 179)&#34;&gt;
 &lt;b&gt; Note: &lt;/b&gt;
@@ -782,7 +823,7 @@ hist1 &amp;lt;- ggplot(data = base_created2,
                 mapping = aes(wage, fill = factor(year))) +
   geom_histogram(bins = 10)
 hist1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/first-contact/first-contact_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;
@@ -796,7 +837,7 @@ histogram wage if year==2020, saving(Hist2, replace) bin(10) freq title(&amp;quo
   geom_histogram(bins = 10) +
   facet_wrap(vars(year))
 hist2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/first-contact/first-contact_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt; Stata
 &lt;/summary&gt;

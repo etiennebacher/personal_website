@@ -3,6 +3,9 @@ title: What to do when your code doesn't work?
 author: Etienne Bacher
 date: '2020-05-22'
 lastmod: '2020-05-22'
+output:
+  blogdown::html_page:
+    toc: true
 categories: []
 tags:
   - R
