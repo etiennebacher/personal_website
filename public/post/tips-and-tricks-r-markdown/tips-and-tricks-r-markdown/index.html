@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I wrote my Master&#39;s thesis with bookdown. This post contains some tips to modify the layout and other stuff.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#4682B4">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/r.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/r.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i%7CKarla:400,400i,700,700i%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99209585-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-99209585-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Etienne Bacher">
+  <meta property="og:url" content="/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/">
+  <meta property="og:title" content="Writing a Master&#39;s thesis with R Markdown and Bookdown | Etienne Bacher">
+  <meta property="og:description" content="I wrote my Master&#39;s thesis with bookdown. This post contains some tips to modify the layout and other stuff."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-07-16T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-07-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/"
+  },
+  "headline": "Writing a Master's thesis with R Markdown and Bookdown",
+  
+  "datePublished": "2020-07-16T00:00:00Z",
+  "dateModified": "2020-07-16T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Etienne Bacher"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Etienne Bacher",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "I wrote my Master's thesis with bookdown. This post contains some tips to modify the layout and other stuff."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Writing a Master&#39;s thesis with R Markdown and Bookdown | Etienne Bacher</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">
+        Etienne Bacher
+      </a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Writing a Master&#39;s thesis with R Markdown and Bookdown</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 16, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p>I finished my Master’s thesis very recently, and I wrote it with R Markdown, and more precisely with the <code>bookdown</code> package. It was really comfortable to do absolutely everything with R: data treatment, use of econometric methods, redaction with chunk of codes, and even the slides for the presentation! However, I have also spent a non-negligible part of my time trying to have a correct layout, essentially for the first pages. I found that some things were not as easy to do as they should be. This post contains some solutions to these problems.</p>
+<div id="why-bookdown" class="section level2">
+<h2>Why <code>bookdown</code>?</h2>
+<p>A small preamble before starting to list these problems and solutions: why did I use <code>bookdown</code> and not <code>rmarkdown</code>? <code>bookdown</code> has a few advantages that are very important when writing a Master’s thesis (or an academic paper in general), such as cross-references between sections, figures, tables, etc. See <a href="https://bookdown.org/yihui/bookdown/">the <code>bookdown</code> book</a> for all the details.</p>
+<p>While it is possible to create a <code>bookdown</code> project with RStudio, I “manually” made my own, because I have the impression there are a lot of files created automatically by RStudio that would just confuse myself. Therefore, I had a file containing the YAML and the chunks necessary to load all the packages needed and to run the child documents. Child documents are <code>.Rmd</code> files that contain only some Markdown text and code chunks (no YAML). They make it much easier to write a thesis since it is possible to divide it in several pieces (introduction, literature review, method, etc.).</p>
+<p>In addition to <code>Global.Rmd</code> (which contains YAML and setup chunks), I used two <code>.tex</code> files: <code>preamble.tex</code> is where I put all the LaTeX commands and packages I used, and <code>titlepage.tex</code> to make my custom titlepage, acknowledgments and abstract before the table of contents.</p>
+</div>
+<div id="latex-packages-and-commands" class="section level2">
+<h2>LaTeX packages and commands</h2>
+<p>In <code>preamble.tex</code>, I put all the LaTeX commands, many of them being <code>\usepackage</code>. For example, the R package <code>kableExtra</code> provides a list of LaTeX packages required to be able to customize the tables (see <a href="https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf">here</a>).</p>
+<p>Here’s a small list of the commands I used for my thesis.</p>
+<ul>
+<li><p><code>\renewcommand{\baselinestretch}{1.3}</code> to change the space between lines;</p></li>
+<li><p><code>\pagenumbering{gobble}</code> to remove page numbering for the first pages, that contain the title, the table of content (TOC), the lists of figures and tables (LOF and LOT) and some blank pages. I used <code>\pagenumbering{arabic}</code> after the YAML to start the page numbering at the right place.</p></li>
+<li><p><code>\usepackage{caption}</code>; <code>\captionsetup[table]{name=Tableau}</code>; <code>\captionsetup[figure]{name=Figure}</code>. These three commands (to put on three separate lines) are here to change the name of tables and figures. If you’re writing in English, you probably won’t need them, but they were necessary to write in French.</p></li>
+<li><p>the following lines create a new command to create a blank page after the titlepage. Strangely, <code>\pagebreak</code> or <code>\newpage</code> didn’t work inside the titlepage and I had to find an alternative:</p></li>
+</ul>
+<details>
+<summary> Command to create a blank page
+</summary>
+<p>
+<pre><code>\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}</code></pre>
+</p>
+</details>
+</div>
+<div id="titlepage-acknowledgements-and-abstract" class="section level2">
+<h2>Titlepage, acknowledgements and abstract</h2>
+<p>Concerning these three components, I put them in another file named <code>titlepage.tex</code>. This is the layout I wanted:</p>
+<ul>
+<li><p>a titlepage with some logos and some information on my thesis and my university;</p></li>
+<li><p>a blank page;</p></li>
+<li><p>acknowledgements on a new page;</p></li>
+<li><p>abstract on a new page;</p></li>
+<li><p>TOC, LOF and LOT on a new page.</p></li>
+</ul>
+<p>To do so, I started the titlepage with <code>\begin{titlepage}</code> and customized it as I wanted. But before putting <code>\end{titlepage}</code>, I placed <code>\afterpage{\blankpage}</code>, which is the command we define in <code>preamble.tex</code>. With this, I had a titlepage and a blank page.</p>
+<p>The next step was to create two pages containing the acknowledgements and the abstract This was easily done in LaTeX, and this time I could use <code>\pagebreak</code> at the end of the acknowledgements to create a new page for the abstract. I also put another <code>\pagebreak</code> to finish <code>titlepage.tex</code>, so that TOC, LOF and LOT (created in the YAML) could start on a new page.</p>
+</div>
+<div id="include-latex-files-in-yaml" class="section level2">
+<h2>Include LaTeX files in YAML</h2>
+<p>As explained, I had two <code>.tex</code> files to run when compiling the R Markdown file:</p>
+<ul>
+<li><p><code>preamble.tex</code> is a list of commands that should be placed before <code>\begin{document}</code> when this <code>.Rmd</code> file will be converted to <code>.tex</code>. Therefore, I used <code>in_header</code> in the YAML to compile it.</p></li>
+<li><p><code>titlepage.tex</code> contains some elements that should be in the final PDF document. Since this should appear first (before the rest of the <code>.Rmd</code> document), I used <code>before_body</code> in the YAML.</p></li>
+</ul>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<p>Here are examples of the three files: <code>Global.Rmd</code>, <code>preamble.tex</code> and <code>titlepage.tex</code>.</p>
+<details>
+<summary> <strong>Global.Rmd</strong>
+</summary>
+<p>
+<pre><code>---
+output: 
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
+      before_body: titlepage.tex
+    keep_tex: true
+    toc: yes
+    toc_depth: 3
+indent: true
+link-citations: yes
+lot: true
+lof: true
+---
+
+&lt;!-- Start the redaction on a new page --&gt;
+\newpage
+
+&lt;!-- Start page numbering where the redaction starts --&gt;
+\pagenumbering{arabic}
+
+```{r globaloptions, include=FALSE}
+# Include here chunk options
+```
+
+```{r packages}
+# Load here the packages
+```
+
+&lt;!-- Call the child documents --&gt;
+```{r body, child = c(&#39;01-Intro.Rmd&#39;, &#39;02-Literature.Rmd&#39;, &#39;03-Data-and-method.Rmd&#39;, &#39;04-Results.Rmd&#39;, &#39;05-Discussion.Rmd&#39;, &#39;06-Conclusion.Rmd&#39;)}
+```
+
+&lt;!-- Placement of bibliography --&gt;
+# References {-}
+
+&lt;div id=&quot;refs&quot;&gt;&lt;/div&gt;
+
+
+&lt;!-- Place the appendix after the bibliography --&gt;
+```{r appendix, child = c(&#39;07--Appendix.Rmd&#39;)}
+```</code></pre>
+</p>
+</details>
+<details>
+<summary> <strong>preamble.tex</strong>
+</summary>
+<p>
+<pre><code>% Line spacing
+\renewcommand{\baselinestretch}{1.3}
+
+% Page number and chapter at the top of the page
+\pagestyle{headings}
+
+% Important packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{dcolumn}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+% Figure and table names 
+\usepackage{caption}
+\captionsetup[table]{name=Tableau} 
+\captionsetup[figure]{name=Figure}
+
+% Packages for kableExtra
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+% Remove page numbering before start of redaction
+\pagenumbering{gobble}
+
+% Command to make a blank page
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}</code></pre>
+</p>
+</details>
+<details>
+<summary> <strong>titlepage.tex</strong>
+</summary>
+<p>
+<pre><code>\begin{titlepage}
+\centering
+Title of my thesis
+\afterpage{\blankpage}
+\end{titlepage}
+
+\section*{Acknowledgements}
+Thanks everyone
+\pagebreak
+
+\begin{center}
+\textbf{Abstract}
+\end{center}
+Bla bla bla...
+\pagebreak</code></pre>
+</p>
+</details>
+<p>Hope this helps!</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/r-markdown/">R Markdown</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/&amp;text=Writing%20a%20Master&amp;#39;s%20thesis%20with%20R%20Markdown%20and%20Bookdown" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/&amp;t=Writing%20a%20Master&amp;#39;s%20thesis%20with%20R%20Markdown%20and%20Bookdown" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Writing%20a%20Master&amp;#39;s%20thesis%20with%20R%20Markdown%20and%20Bookdown&amp;body=/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/&amp;title=Writing%20a%20Master&amp;#39;s%20thesis%20with%20R%20Markdown%20and%20Bookdown" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/etienne/avatar_huac7c08db1ead95d4a130a43e612684a0_1725955_270x270_fill_lanczos_center_2.png" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/"></a></h5>
+      <h6 class="card-subtitle">PhD Student in Economics</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:etienne.bacher@orange.fr" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/BacherEtienne" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/etiennebacher" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+<section id="comments">
+  <script src="https://utteranc.es/client.js"
+        repo="etiennebacher/personal_website"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/code-doesnt-work/what-to-do-when-your-code-does-not-work/">What to do when your code doesn&#39;t work?</a></li>
+      
+      <li><a href="/post/my-shiny-app/my-shiny-app/">My application for the Shiny Contest (2020)</a></li>
+      
+      <li><a href="/post/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/">My favorite shortcuts in RStudio</a></li>
+      
+      <li><a href="/post/first-contact/first-contact/">First contact with the data on R</a></li>
+      
+      <li><a href="/post/why-moving/why-moving/">Why you should move from Stata to R</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.c816d323c3a55093dae0829b44ea1ca8.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  
+  <p class="powered-by">
+    <a href="/license/">LICENSE: CC-BY-SA <br> <i class="fab fa-creative-commons fa-2x"></i><i class="fab fa-creative-commons-by fa-2x"></i><i class="fab fa-creative-commons-sa fa-2x"></i> </a><br>
+  </p>
+  
+
+  <p class="powered-by">
+    © Etienne Bacher 2020 &middot; 
+
+    Made with the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package, and the 
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

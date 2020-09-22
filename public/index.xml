@@ -7,16 +7,16 @@
     <description>Etienne Bacher</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright><lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_512x512_fill_lanczos_center_2.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Etienne Bacher</title>
       <link>/</link>
     </image>
     
     <item>
       <title>Writing a Master&#39;s thesis with R Markdown and Bookdown</title>
-      <link>/blog/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</link>
+      <link>/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</guid>
+      <guid>/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</guid>
       <description>
 
 
@@ -199,9 +199,9 @@ Bla bla bla...
     
     <item>
       <title>What to do when your code doesn&#39;t work?</title>
-      <link>/blog/code-doesnt-work/what-to-do-when-your-code-does-not-work/</link>
+      <link>/post/code-doesnt-work/what-to-do-when-your-code-does-not-work/</link>
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/code-doesnt-work/what-to-do-when-your-code-does-not-work/</guid>
+      <guid>/post/code-doesnt-work/what-to-do-when-your-code-does-not-work/</guid>
       <description>
 
 
@@ -262,9 +262,9 @@ Bla bla bla...
     
     <item>
       <title>My application for the Shiny Contest (2020)</title>
-      <link>/blog/my-shiny-app/my-shiny-app/</link>
+      <link>/post/my-shiny-app/my-shiny-app/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/my-shiny-app/my-shiny-app/</guid>
+      <guid>/post/my-shiny-app/my-shiny-app/</guid>
       <description>
 
 
@@ -284,9 +284,9 @@ Bla bla bla...
     
     <item>
       <title>My favorite shortcuts in RStudio</title>
-      <link>/blog/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</link>
+      <link>/post/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</guid>
+      <guid>/post/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</guid>
       <description>
 
 
@@ -337,9 +337,9 @@ Other useful tools:&lt;/p&gt;
     
     <item>
       <title>First contact with the data on R</title>
-      <link>/blog/first-contact/first-contact/</link>
+      <link>/post/first-contact/first-contact/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/blog/first-contact/first-contact/</guid>
+      <guid>/post/first-contact/first-contact/</guid>
       <description>
 
 
@@ -818,9 +818,9 @@ hist2&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Why you should move from Stata to R</title>
-      <link>/blog/why-moving/why-moving/</link>
+      <link>/post/why-moving/why-moving/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/blog/why-moving/why-moving/</guid>
+      <guid>/post/why-moving/why-moving/</guid>
       <description>
 
 
@@ -844,6 +844,30 @@ There exist thousands and thousands of R packages which cover a large spectrum o
 &lt;p&gt;&lt;strong&gt;Reason 5: RStudio is just a pleasure to use&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;RStudio is the most used IDE for R (Integrated Desktop Environment, not the language but a software that permits to use more easily the language). It has tons of shortcuts and is very customizable. It is a real pleasure to use, and it can be linked to other great services like GitHub (maybe you don’t know what it is so in a few words, it is a service that permits version control i.e. keep a trace of every change in a project, whether it is a report, a package or a web application).&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>/resume/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/resume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talks &amp; Workshops</title>
+      <link>/talks/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/talks/</guid>
+      <description></description>
     </item>
     
     <item>

@@ -3,11 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/experience/</loc>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
+    <loc>/post/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -17,12 +13,12 @@
   </url>
   
   <url>
-    <loc>/tag/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tag/r-markdown/</loc>
+    <loc>/tags/r-markdown/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -32,43 +28,62 @@
   </url>
   
   <url>
-    <loc>/blog/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</loc>
+    <loc>/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/</loc>
     <lastmod>2020-07-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/code-doesnt-work/what-to-do-when-your-code-does-not-work/</loc>
+    <loc>/post/code-doesnt-work/what-to-do-when-your-code-does-not-work/</loc>
     <lastmod>2020-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/my-shiny-app/my-shiny-app/</loc>
+    <loc>/post/my-shiny-app/my-shiny-app/</loc>
     <lastmod>2020-04-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</loc>
+    <loc>/post/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/</loc>
     <lastmod>2020-04-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/first-contact/first-contact/</loc>
+    <loc>/post/first-contact/first-contact/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tag/stata/</loc>
+    <loc>/tags/stata/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/why-moving/why-moving/</loc>
+    <loc>/post/why-moving/why-moving/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resume/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talks/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/license/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
   </url>
   
   <url>
@@ -80,7 +95,7 @@
   </url>
   
   <url>
-    <loc>/author/etienne-bacher/</loc>
+    <loc>/authors/etienne/</loc>
   </url>
   
   <url>
@@ -89,10 +104,6 @@
   
   <url>
     <loc>/publication/</loc>
-  </url>
-  
-  <url>
-    <loc>/talk/</loc>
   </url>
   
 </urlset>

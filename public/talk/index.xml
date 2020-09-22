@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks | Etienne Bacher</title>
+    <title>All Talks &amp; Workshops | Etienne Bacher</title>
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
-    <description>Recent &amp; Upcoming Talks</description>
+    <description>All Talks &amp; Workshops</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright>
     <image>
-      <url>/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_512x512_fill_lanczos_center_2.png</url>
-      <title>Recent &amp; Upcoming Talks</title>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>All Talks &amp; Workshops</title>
       <link>/talk/</link>
     </image>
     
