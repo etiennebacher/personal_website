@@ -3,5 +3,5 @@ title: Blog
 header:
   caption: ""
   image: ""
-view: 3
+view: 2
 ---
