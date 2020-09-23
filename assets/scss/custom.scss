@@ -17,18 +17,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* links */
 
-a:active, 
-a:focus, 
+a:active,
+a:focus,
 a:hover {
   color: #004346;
 }
 
-/* nav */
+/* nav
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
 	color: #06805E;
 }
+
+*/
 
 .navbar {
   box-shadow: none;
@@ -42,7 +44,7 @@ a:hover {
 /*----NAV LINK HOVER ANIMATION -----*/
 /* from Desiree: https://github.com/dcossyleon/blogdown_desiree/blob/master/assets/scss/custom.scss */
 
-/* stroke */
+/* stroke
 
 a.nav-link,
 a.nav-link:after,
@@ -61,7 +63,7 @@ a.nav-link:after {
   right: 0;
   margin: auto;
   width: 0%;
-  content: '.'; /* make invisible, dot beneath links */
+  content: '.';  make invisible, dot beneath links
   color: transparent;
   background: #06805E;
   height: 2px;
@@ -70,6 +72,8 @@ a.nav-link:after {
 a.nav-link:hover:after {
   width: 80%;
 }
+
+*/
 
 /* home page */
 
@@ -90,7 +94,7 @@ a.nav-link:hover:after {
 }
 
 .home-section:not(:first-of-type) {
-  padding: 25px 0 50px 0; 
+  padding: 25px 0 50px 0;
 }
 
 /* this erases the margin-bottom for h1 */
@@ -125,8 +129,8 @@ pre {
   border-radius: 0px; /*undo rounded corners*/
 }
 
-pre code { 
-  background: none; 
+pre code {
+  background: none;
   font-size: 0.8rem;
 }
 
@@ -225,11 +229,11 @@ hr {
     margin-left: auto;
     margin-right: auto;
  }
- 
+
 .home-section.wg-experience .card-body {
 	padding: .5rem;
 }
- 
+
 .home-section.wg-experience .card .card-text{
   padding: 0;
 }
