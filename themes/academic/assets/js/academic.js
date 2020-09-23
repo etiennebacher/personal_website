@@ -357,27 +357,25 @@
         localStorage.setItem('dark_mode', '1');
         isDarkTheme = 1;
         console.info('User changed theme variation to Dark.');
-        $themeChanger.removeClass('fa-moon fa-sun').addClass('fa-palette');
+
+        // added by me (Etienne): removed fa-palette and changed the arguments
+        // so that there is the sun icon displayed in dark mode and vice versa
+        // Also removed some chunks, see https://github.com/rbind/apreshill
+        // (version of 23/09/2020) to see the original JS code
+
+        $themeChanger.removeClass('fa-moon').addClass('fa-sun');
         break;
       case 1:
-        localStorage.setItem('dark_mode', '2');
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          // The visitor prefers dark themes and switching to the dark variation is allowed by admin.
-          isDarkTheme = 1;
-        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-          // The visitor prefers light themes and switching to the dark variation is allowed by admin.
-          isDarkTheme = 0;
-        } else {
-          isDarkTheme = isSiteThemeDark;  // Use the site's default theme variation based on `light` in the theme file.
-        }
-        console.info('User changed theme variation to Auto.');
-        $themeChanger.removeClass('fa-moon fa-palette').addClass('fa-sun');
-        break;
-      default:
         localStorage.setItem('dark_mode', '0');
         isDarkTheme = 0;
         console.info('User changed theme variation to Light.');
-        $themeChanger.removeClass('fa-sun fa-palette').addClass('fa-moon');
+        $themeChanger.removeClass('fa-sun').addClass('fa-moon');
+        break;
+      default:
+        localStorage.setItem('dark_mode', '1');
+        isDarkTheme = 1;
+        console.info('User changed theme variation to Dark.');
+        $themeChanger.removeClass('fa-moon').addClass('fa-sun');
         break;
     }
     renderThemeVariation(isDarkTheme);
@@ -479,17 +477,13 @@
       let themeMode = getThemeMode();
       let $themeChanger = $('.js-dark-toggle i');
       switch (themeMode) {
-        case 0:
-          $themeChanger.removeClass('fa-sun fa-palette').addClass('fa-moon');
+        default:
+          $themeChanger.removeClass('fa-sun').addClass('fa-moon');
           console.info('Initialize theme variation to Light.');
           break;
         case 1:
-          $themeChanger.removeClass('fa-moon fa-sun').addClass('fa-palette');
+          $themeChanger.removeClass('fa-sun').addClass('fa-moon');
           console.info('Initialize theme variation to Dark.');
-          break;
-        default:
-          $themeChanger.removeClass('fa-moon fa-palette').addClass('fa-sun');
-          console.info('Initialize theme variation to Auto.');
           break;
       }
     }
