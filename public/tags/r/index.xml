@@ -5,12 +5,26 @@
     <link>/tags/r/</link>
       <atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright><lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright><lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>R</title>
       <link>/tags/r/</link>
     </image>
+    
+    <item>
+      <title>assemblr</title>
+      <link>/project/assemblr/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/project/assemblr/</guid>
+      <description>&lt;p&gt;&lt;code&gt;{assemblr}&lt;/code&gt; is an R package and addin whose aim is to make it easier to build regression tables. More specifically, it provides an interactive environment to create regression tables with the &lt;code&gt;{stargazer}&lt;/code&gt; package. You can check the development of this package 
+&lt;a href=&#34;https://github.com/etiennebacher/assemblr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why &lt;code&gt;{assemblr}&lt;/code&gt;?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;During my academic works with &lt;code&gt;R&lt;/code&gt;, I used a lot the &lt;code&gt;{stargazer}&lt;/code&gt; and &lt;code&gt;{texreg}&lt;/code&gt; packages to produce regression tables. These are incredibly helpful, and provide a lot of options to customize the LaTeX format, which I primarily use. However, it is easy to be lost among all of these options, and it&amp;rsquo;s not really possible to know exactly what the table will look like.&lt;/p&gt;
+&lt;p&gt;Therefore, I thought it would be a good idea to create an RStudio addin that takes the form of a Shiny app, and that allows to design regression tables with live preview. With this, the users could actually play with the multiple options, and easily check if they like them or not. All of these options would then be saved and the code to build the corresponding table would be provided when the user is done.&lt;/p&gt;
+&lt;p&gt;Besides being useful for the user, this project is also useful to me! Indeed, it has become the way to learn how to make an R package, how to make an RStudio addin (which is not hard once you have a package), and how to use the &lt;code&gt;{golem}&lt;/code&gt; package for Shiny apps.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Writing a Master&#39;s thesis with R Markdown and Bookdown</title>

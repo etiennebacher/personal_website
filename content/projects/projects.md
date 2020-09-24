@@ -25,29 +25,29 @@ subtitle = ""
     name = "All"
     tag = "*"
 
-  [[content.filter_button]]
-    name = "website"
-    tag = "website"
+  # [[content.filter_button]]
+  #   name = "website"
+  #   tag = "website"
     
   [[content.filter_button]]
     name = "R"
     tag = "R"
     
-  [[content.filter_button]]
-    name = "Software"
-    tag = "software"
-
-  [[content.filter_button]]
-    name = "Workshop"
-    tag = "workshop"
-  
-  [[content.filter_button]]
-    name = "Course"
-    tag = "course"
-    
-  [[content.filter_button]]
-    name = "Book"
-    tag = "book"
+  # [[content.filter_button]]
+  #   name = "Software"
+  #   tag = "software"
+  # 
+  # [[content.filter_button]]
+  #   name = "Workshop"
+  #   tag = "workshop"
+  # 
+  # [[content.filter_button]]
+  #   name = "Course"
+  #   tag = "course"
+  #   
+  # [[content.filter_button]]
+  #   name = "Book"
+  #   tag = "book"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
