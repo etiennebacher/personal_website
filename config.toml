@@ -41,6 +41,12 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
   section = [ "HTML", "RSS" ]
 
+[frontmatter]
+  date = ["publishDate","date", "lastmod"]
+  lastmod = ["lastmod", "date", ":git", "publishDate"]
+  publishDate = ["publishDate", "date"]
+  expiryDate = ["expiryDate"]
+
 [mediaTypes."application/manifest+json"]
   suffixes = ["webmanifest"]
 
