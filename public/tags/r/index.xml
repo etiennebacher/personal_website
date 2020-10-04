@@ -5,12 +5,283 @@
     <link>/tags/r/</link>
       <atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright><lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Etienne Bacher 2020</copyright><lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>R</title>
       <link>/tags/r/</link>
     </image>
+    
+    <item>
+      <title>Text analysis of the dialogues in &#34;The Americans&#34;</title>
+      <link>/post/the-americans/the-americans/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/the-americans/the-americans/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#get-the-dialogues&#34;&gt;Get the dialogues&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#find-a-source-for-the-dialogues&#34;&gt;Find a source for the dialogues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#import-the-dialogues&#34;&gt;Import the dialogues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#generalize-this-to-all-episodes&#34;&gt;Generalize this to all episodes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#analyze-the-dialogues&#34;&gt;Analyze the dialogues&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#number-of-words-per-episode-per-season&#34;&gt;Number of words per episode per season&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-words-are-the-most-said&#34;&gt;What words are the most said?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sentiment-analysis&#34;&gt;Sentiment analysis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Americans_(2013_TV_series)&#34;&gt;&lt;em&gt;The Americans&lt;/em&gt;&lt;/a&gt; is a TV show that tells the story of two KGB agents infiltrated in the USA in the 1980’s. It shows us the life of these two people, who have to do espionage missions while taking care of their children and developing their own business as their cover.&lt;/p&gt;
+&lt;p&gt;Recently, I watched &lt;a href=&#34;https://rstudio.com/resources/rstudioconf-2020/learning-r-with-humorous-side-projects/&#34;&gt;the talk of Ryan Timpe&lt;/a&gt; at RStudio::conf 2020 about learning R with humorous side projects. It made me think about what projects I could develop to learn new things with R, and it pushed me to mix my interest both for &lt;em&gt;The Americans&lt;/em&gt; and for R. I thought it would be interesting to analyze the dialogues of this TV show since it required learning two new skills: scraping web data to get the dialogues, and doing text analysis to explore these dialogues.&lt;/p&gt;
+&lt;div id=&#34;get-the-dialogues&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get the dialogues&lt;/h2&gt;
+&lt;div id=&#34;find-a-source-for-the-dialogues&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Find a source for the dialogues&lt;/h3&gt;
+&lt;p&gt;Apparently, contrarily to &lt;a href=&#34;https://github.com/EmilHvitfeldt/friends&#34;&gt;&lt;em&gt;Friends&lt;/em&gt;&lt;/a&gt;, nobody developed a package containing the dialogues of &lt;em&gt;The Americans&lt;/em&gt; yet. Therefore, I had to search online for these, and I found &lt;a href=&#34;http://transcripts.foreverdreaming.org/viewforum.php?f=116&#34;&gt;this website&lt;/a&gt; that contains all of the dialogues and other text information (lyrics, stage directions, etc.), with one page for one episode.&lt;/p&gt;
+&lt;p&gt;One problem with this website is that it provides the dialogues for season 1 to 4 but not for seasons 5 and 6. However, this is not a big issue. Another drawback of this website is that it doesn’t always provide information on who is talking, so it’s not possible to analyze the words of a specific person. But it’s good enough for me, I just want to train, the results don’t matter here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;import-the-dialogues&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Import the dialogues&lt;/h3&gt;
+&lt;p&gt;Let’s see how to import the dialogues with episode 1 of season 1. First of all, two packages will be needed:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rvest)
+library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, we want to obtain the details of the page containing the dialogues for the first episode:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;page &amp;lt;- xml2::read_html(&amp;quot;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;amp;t=15871&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This condenses all HTML information into two lists. But we only need the dialogues. Therefore, we have to find the HTML argument that contains them. To do so, we can use the Inspector in the webpage (Ctrl+Shift+C). When hovering elements on the webpage, we can see that there are several classes. Each line is embedded into &lt;code&gt;p&lt;/code&gt;, but we notice that the whole text is in &lt;code&gt;div.postbody&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/the-americans/the-americans_files/inspector_1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Therefore, we can select only this class:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;page_text &amp;lt;- html_node(page, &amp;quot;div.postbody&amp;quot;) %&amp;gt;%
+  html_children() %&amp;gt;%
+  xml2::xml_find_all(&amp;quot;//div[contains(@class, &amp;#39;postbody&amp;#39;)]&amp;quot;) %&amp;gt;%
+  html_text(trim = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, &lt;code&gt;page_text&lt;/code&gt; is a very long vector that contains all text information. However, everything is not important here: we don’t want to analyze the lyrics of the soundtrack, the stage directions, or the name of the person who is talking. The latter could be interesting if we had it for every sentence. However, we only have it occasionally, which makes it useless. To remove this irrelevant text, we will use &lt;code&gt;gsub()&lt;/code&gt;, a base R function.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;page_text_cleaned &amp;lt;- page_text %&amp;gt;%
+  gsub(&amp;quot;♪♪&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;% # double music symbol
+  gsub(&amp;quot;♪ [^♪]+♪&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;% # text between music symbol (= lyrics)
+  gsub(&amp;quot;\\n&amp;quot;, &amp;quot; &amp;quot;, .) %&amp;gt;% # new line symbol
+  gsub(&amp;quot;\\t&amp;quot;, &amp;quot; &amp;quot;, .) %&amp;gt;% # \t
+  gsub(&amp;quot;\\[[^\\]]*\\]&amp;quot;, &amp;quot;&amp;quot;, ., perl = TRUE) %&amp;gt;% # text between brackets
+  gsub(&amp;quot;\\([^\\)]*\\)&amp;quot;, &amp;quot;&amp;quot;, ., perl = TRUE) %&amp;gt;% # text between parenthesis
+  gsub(&amp;quot;\\\\&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;% # backslash
+  gsub(&amp;quot;\\(adsbygoogle = window.adsbygoogle \\|\\| \\).push\\(\\{\\}\\);&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;% # ads
+  gsub(&amp;quot;Philip:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;% 
+  gsub(&amp;quot;Elizabeth:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+  gsub(&amp;quot;Paige:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+  gsub(&amp;quot;Henry:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+  gsub(&amp;quot;Stan:&amp;quot;, &amp;quot;&amp;quot;, .) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The text is now cleaned: most of the useless text was removed, and 99% of what’s left is the dialogues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;generalize-this-to-all-episodes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Generalize this to all episodes&lt;/h3&gt;
+&lt;p&gt;As I said before, there is a different page for each episode. How can we generalize the previous step to all these pages?&lt;/p&gt;
+&lt;p&gt;Well, the code we used before will be the same once we have the HTML information of the episode page. The only problem here is that we must find a way to download this HTML information for all pages. We can notice that the URL addresses are almost identical for all episodes:&lt;/p&gt;
+&lt;p&gt;Episode 1, season 1: &lt;em&gt;&lt;a href=&#34;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;amp;t=15871&#34; class=&#34;uri&#34;&gt;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;amp;t=15871&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Episode 2, season 1: &lt;em&gt;&lt;a href=&#34;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;amp;t=15872&#34; class=&#34;uri&#34;&gt;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;amp;t=15872&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We see here that only the argument &lt;code&gt;t&lt;/code&gt; differs between those addresses. If we could collect of the values of &lt;code&gt;t&lt;/code&gt; for all the pages, we could then collect the HTML information very easily. There is now another problem: what are the values of &lt;code&gt;t&lt;/code&gt;? We could suppose that we just need to add 1 to the previous number (15871, 15872, 15873…). However, for episode 12 in season 4 for example, the value of &lt;code&gt;t&lt;/code&gt; is 27447. Therefore, we must find another way to collect these &lt;code&gt;t&lt;/code&gt; values.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Collect &lt;em&gt;t&lt;/em&gt; values&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To do so, we use the Inspector once again, but this time on the home page, not on an episode page. Exploring the HTML tags, we notice that the &lt;code&gt;t&lt;/code&gt; value is displayed in the class &lt;code&gt;a.topictitle&lt;/code&gt;, among other information.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/the-americans/the-americans_files/inspector_2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;See the value of &lt;code&gt;t&lt;/code&gt; in href in the inspector?&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Using the same code as before, we collect the text contained in this class, and extract the &lt;code&gt;t&lt;/code&gt; value:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# First we get the HTML information of the home page (menu 1)
+menu_1 &amp;lt;- read_html(&amp;quot;http://transcripts.foreverdreaming.org/viewforum.php?f=116&amp;quot;)
+
+# Then we obtain the text in this specific class and keep only the t value
+episode_ids_1 &amp;lt;- html_node(menu_1, &amp;quot;body&amp;quot;) %&amp;gt;%
+  html_children() %&amp;gt;%
+  xml2::xml_find_all(&amp;quot;//a[contains(@class, &amp;#39;topictitle&amp;#39;)]&amp;quot;) %&amp;gt;%
+  sub(&amp;#39;.*f=116&amp;amp;amp;t= *(.*?) *&amp;amp;amp;sid.*&amp;#39;, &amp;quot;\\1&amp;quot;, .) %&amp;gt;%
+  as.numeric()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The last step for this first menu is to remove the two first &lt;code&gt;t&lt;/code&gt; values (or ids), since they correspond to “Online Store” and “Board Updates” and not to episodes.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;episode_ids_1 &amp;lt;- episode_ids_1[-c(1, 2)]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After repeating this operation for the other two menus, we finally obtain all the episode ids:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;### Second menu
+menu_2 &amp;lt;- read_html(&amp;quot;http://transcripts.foreverdreaming.org/viewforum.php?f=116&amp;amp;start=25&amp;quot;)
+
+episode_ids_2 &amp;lt;- html_node(menu_2, &amp;quot;body&amp;quot;) %&amp;gt;%
+  html_children() %&amp;gt;%
+  xml2::xml_find_all(&amp;quot;//a[contains(@class, &amp;#39;topictitle&amp;#39;)]&amp;quot;) %&amp;gt;%
+  sub(&amp;#39;.*f=116&amp;amp;amp;t= *(.*?) *&amp;amp;amp;sid.*&amp;#39;, &amp;quot;\\1&amp;quot;, .) %&amp;gt;%
+  as.numeric() 
+
+episode_ids_2 &amp;lt;- episode_ids_2[-c(1, 2)]
+
+### Third menu
+
+menu_3 &amp;lt;- read_html(&amp;quot;http://transcripts.foreverdreaming.org/viewforum.php?f=116&amp;amp;start=50&amp;quot;)
+
+episode_ids_3 &amp;lt;- html_node(menu_3, &amp;quot;body&amp;quot;) %&amp;gt;%
+  html_children() %&amp;gt;%
+  xml2::xml_find_all(&amp;quot;//a[contains(@class, &amp;#39;topictitle&amp;#39;)]&amp;quot;) %&amp;gt;%
+  sub(&amp;#39;.*f=116&amp;amp;amp;t= *(.*?) *&amp;amp;amp;sid.*&amp;#39;, &amp;quot;\\1&amp;quot;, .) %&amp;gt;%
+  as.numeric()
+
+episode_ids_3 &amp;lt;- episode_ids_3[-c(1, 2)]
+
+
+### All episodes ids
+episode_ids_total &amp;lt;- c(episode_ids_1, episode_ids_2, episode_ids_3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Get the dialogues for all episodes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The final step in this first part (obtaining the dialogues) is to get the dialogues for all pages. We already have the code for that, it is the first thing we made. Now, we only have to apply this code for each page, i.e for each episode id we got. To do so, we can use the &lt;code&gt;{purrr}&lt;/code&gt; package (contained in the &lt;code&gt;{tidyverse}&lt;/code&gt;):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;list_dialogues &amp;lt;- purrr::map(episode_ids_total, .f = function(x) {
+  
+  page &amp;lt;- read_html(paste0(&amp;quot;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;amp;t=&amp;quot;, x))
+  
+  page_text &amp;lt;- html_node(page, &amp;quot;div.postbody&amp;quot;) %&amp;gt;%
+    html_children() %&amp;gt;%
+    xml2::xml_find_all(&amp;quot;//div[contains(@class, &amp;#39;postbody&amp;#39;)]&amp;quot;) %&amp;gt;%
+    html_text(trim = TRUE)
+ 
+  page_text_cleaned &amp;lt;- page_text %&amp;gt;%
+    gsub(&amp;quot;♪♪&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;♪ [^♪]+♪&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;\\n&amp;quot;, &amp;quot; &amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;\\t&amp;quot;, &amp;quot; &amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;\\[[^\\]]*\\]&amp;quot;, &amp;quot;&amp;quot;, ., perl = TRUE) %&amp;gt;%
+    gsub(&amp;quot;\\([^\\)]*\\)&amp;quot;, &amp;quot;&amp;quot;, ., perl = TRUE) %&amp;gt;%
+    gsub(&amp;quot;\\\\&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;\\(adsbygoogle = window.adsbygoogle \\|\\| \\).push\\(\\{\\}\\);&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;Philip:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;Elizabeth:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;Paige:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;Henry:&amp;quot;, &amp;quot;&amp;quot;, .) %&amp;gt;%
+    gsub(&amp;quot;Stan:&amp;quot;, &amp;quot;&amp;quot;, .) 
+  
+  return(page_text_cleaned)
+  
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We used the function &lt;code&gt;map()&lt;/code&gt;, which takes two arguments: a list as input, and a function. The list we used is the list of all episode ids. The function is a custom function: it gathers the code we wrote previously and runs it for each episode id.&lt;/p&gt;
+&lt;p&gt;We now have &lt;code&gt;list_dialogues&lt;/code&gt;, a list that contains 52 big character vectors (one per episode), corresponding to all the dialogues of the episodes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;analyze-the-dialogues&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Analyze the dialogues&lt;/h2&gt;
+&lt;p&gt;Now that we have all the dialogues for each episode, we can analyze them with the &lt;code&gt;{tidytext}&lt;/code&gt; package. First, we must convert the big character vectors into tidy tibbles, i.e dataframes with one word per row. This can be done with &lt;code&gt;unnest_tokens()&lt;/code&gt;, that we use in &lt;code&gt;map()&lt;/code&gt; once again:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidytext)
+
+list_dialogues_words &amp;lt;- map(list_dialogues, .f = function(x) {
+  as_tibble(x) %&amp;gt;%
+    unnest_tokens(word, value)
+})  &lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;number-of-words-per-episode-per-season&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Number of words per episode per season&lt;/h3&gt;
+&lt;p&gt;With this data, we can firstly see the number of words in each episode. To do so, we compute the number of rows (i.e words) per episode and then we plot them as lines to see the evolution throughout a season.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;map(list_dialogues_words, nrow) %&amp;gt;%
+  unlist() %&amp;gt;%
+  as_tibble() %&amp;gt;%
+  tibble::rowid_to_column() %&amp;gt;%
+  mutate(
+    season = case_when(
+      rowid %in% c(1:13) ~ 1,
+      rowid %in% c(14:26) ~ 2,
+      rowid %in% c(27:39) ~ 3,
+      rowid %in% c(40:52) ~ 4
+    )
+  ) %&amp;gt;%
+  group_by(season) %&amp;gt;%
+  mutate(rowid = c(1:13)) %&amp;gt;%
+  ungroup() %&amp;gt;%
+  ggplot(aes(x = rowid, y = value, color = factor(season))) + 
+  geom_line() +
+  scale_x_discrete(name = &amp;quot;Episode number&amp;quot;, limits = factor(c(1:13))) +
+  scale_y_continuous(name = &amp;quot;Number of words&amp;quot;) +
+  ggtitle(&amp;quot;Number of words per episode per season&amp;quot;) +
+  scale_color_discrete(name = &amp;quot;Season&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/the-americans/the-americans_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can see that the first episode of the first season is by far the one with the most words. Maybe because the first one introduces us to the situation, the plot? It is also hard to verify that we didn’t remove words by mistake in the dialogues of the other episodes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-words-are-the-most-said&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What words are the most said?&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;{tidytext}&lt;/code&gt; package also allows us to identify the words that are the most used in the show. We will focus here on the first season but the code below can be easily adapted to analyze the other seasons.&lt;/p&gt;
+&lt;p&gt;An important item provided by &lt;code&gt;{tidytext}&lt;/code&gt; is a dataset of stop words. Stop words are words that are very common in a language, and therefore that are irrelevant when doing text analysis. For example, “across”, “after” or “actually” do not tell anything about a text because they are too common. Also, onomatopoeia (such as “yeah” or “ugh”) do not carry much information.&lt;/p&gt;
+&lt;p&gt;To analyze the dialogues, we will remove those stop words and onomatopoeia using &lt;code&gt;anti_join()&lt;/code&gt;. Then, we count the number of occurences and plot the results to see what words were the most used.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;onomatopoeia &amp;lt;- c(&amp;quot;hey&amp;quot;, &amp;quot;uh&amp;quot;, &amp;quot;um&amp;quot;, &amp;quot;yeah&amp;quot;, &amp;quot;uhh&amp;quot;, &amp;quot;hmm&amp;quot;)
+
+list_dialogues_words[[1]] %&amp;gt;%
+  filter(!(word %in% onomatopoeia)) %&amp;gt;%
+  anti_join(stop_words, by = c(&amp;quot;word&amp;quot; = &amp;quot;word&amp;quot;)) %&amp;gt;%
+  count(word, sort = TRUE) %&amp;gt;% 
+  filter(n &amp;gt; 5) %&amp;gt;%
+  mutate(word = reorder(word, n)) %&amp;gt;%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  geom_text(aes(label = n), nudge_y = 1) +
+  ggtitle(&amp;quot;Most said words in episode 1 of season 1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/the-americans/the-americans_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We could also do this for the whole first season:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;list_dialogues_words[1:13] %&amp;gt;%
+  unlist() %&amp;gt;%
+  as_tibble() %&amp;gt;%
+  rename(&amp;quot;word&amp;quot; = &amp;quot;value&amp;quot;) %&amp;gt;%
+  filter(!(word %in% onomatopoeia)) %&amp;gt;%
+  anti_join(stop_words, by = c(&amp;quot;word&amp;quot; = &amp;quot;word&amp;quot;)) %&amp;gt;%
+  count(word, sort = TRUE) %&amp;gt;%
+  filter(n &amp;gt; 50) %&amp;gt;%
+  mutate(word = reorder(word, n)) %&amp;gt;%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  geom_text(aes(label = n), nudge_y = 10) +
+  ggtitle(&amp;quot;Most said words in season 1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/the-americans/the-americans_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As we could expect, KGB, FBI and agent are in the top 15. Philip is also much more present than Elizabeth.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sentiment-analysis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Sentiment analysis&lt;/h3&gt;
+&lt;p&gt;Finally, we can wonder if those words carry more positive or negative messages. Indeed, &lt;code&gt;{tidytext}&lt;/code&gt; also provides a dataset indicating if a word is positive or negative (or neutral). Therefore, we can count the number of positive and negative words in each episode.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dialogues_sentiment &amp;lt;- map_dfr(list_dialogues_words, function(x) {
+  x %&amp;gt;%
+    inner_join(tidytext::sentiments) %&amp;gt;%
+    count(sentiment)
+}) %&amp;gt;%
+  mutate(
+    season = rep(c(1:4), each = 26),
+    episode = rep(rep(1:13, each = 2), times = 4)
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we can plot the evolution of this number during the four seasons:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dialogues_sentiment %&amp;gt;%
+  ggplot(aes(x = episode, y = n, color = factor(sentiment))) + 
+  geom_line() +
+  scale_x_discrete(name = &amp;quot;Episode number&amp;quot;, limits = factor(c(1:13))) +
+  scale_y_continuous(name = &amp;quot;Number of words&amp;quot;) +
+  ggtitle(paste0(&amp;quot;Number of positive and negative words per episode and per season&amp;quot;)) +
+  facet_wrap(~ season) +
+  scale_color_discrete(&amp;quot;Sentiment&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/the-americans/the-americans_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;And finally, we can determine the positive and negative words that are the most said in the first season:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;list_dialogues_words[1:13] %&amp;gt;%
+  unlist() %&amp;gt;%
+  as_tibble() %&amp;gt;%
+  rename(&amp;quot;word&amp;quot; = &amp;quot;value&amp;quot;) %&amp;gt;%
+  inner_join(tidytext::sentiments) %&amp;gt;%
+  group_by(word) %&amp;gt;%
+  mutate(n = n()) %&amp;gt;%
+  ungroup() %&amp;gt;%
+  distinct() %&amp;gt;%
+  top_n(30) %&amp;gt;%
+  mutate(word = reorder(word, n)) %&amp;gt;%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  facet_wrap(~ sentiment, scales = &amp;quot;free_y&amp;quot;) +
+  geom_text(aes(label = n), nudge_y = 10) + 
+  ggtitle(&amp;quot;Positive and negative words most used in season 1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/the-americans/the-americans_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Overall I think the advice of Ryan Timpe is very good: side projects (humorous or not) are very useful to learn new skills in R. To write this blog post, I had to learn how to scrape the dialogues from a website with &lt;code&gt;{rvest}&lt;/code&gt; and how to use the &lt;code&gt;{tidytext}&lt;/code&gt; package. I hope this was useful to you too!&lt;/p&gt;
+&lt;p&gt;You can find all the code used in &lt;a href=&#34;https://github.com/etiennebacher/The-Americans&#34;&gt;this dedicated repo&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>assemblr</title>

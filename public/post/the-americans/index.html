@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I love the TV show &#34;The Americans&#34; and decided to harvest and analyze the dialogues.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/the-americans/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#4682B4">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/r.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/r.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i%7CKarla:400,400i,700,700i%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99209585-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-99209585-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/the-americans/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Etienne Bacher">
+  <meta property="og:url" content="/post/the-americans/">
+  <meta property="og:title" content="Text analysis of the dialogues in &#34;The Americans&#34; | Etienne Bacher">
+  <meta property="og:description" content="I love the TV show &#34;The Americans&#34; and decided to harvest and analyze the dialogues."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-10-04T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-10-04T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/the-americans/"
+  },
+  "headline": "Text analysis of the dialogues in \"The Americans\"",
+  
+  "datePublished": "2020-10-04T00:00:00Z",
+  "dateModified": "2020-10-04T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Etienne Bacher"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Etienne Bacher",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu1a883720ec744ec3408e3304edaa2e2c_39637_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "I love the TV show \"The Americans\" and decided to harvest and analyze the dialogues."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Text analysis of the dialogues in &#34;The Americans&#34; | Etienne Bacher</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">
+        Etienne Bacher
+      </a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Text analysis of the dialogues in &#34;The Americans&#34;</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 4, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    36 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p><a href="https://en.wikipedia.org/wiki/The_Americans_(2013_TV_series)"><em>The Americans</em></a> is a TV show that tells the story of two KGB agents infiltrated in the USA in the 1980’s. It shows us the life how these two people, who have to do espionage missions while taking care of their children and developing their own business as their cover.</p>
+<p>Recently, I watched <a href="https://rstudio.com/resources/rstudioconf-2020/learning-r-with-humorous-side-projects/">the talk of Ryan Timpe</a> at RStudio::conf 2020 about learning R with humorous side projects. It made me think about what projects I could develop to learn new things with R, and it pushed me to mix my interest both for <em>The Americans</em> and for R. I thought it would be interesting to analyze the dialogues of this TV show since it required learning two new skills: scraping web data to get the dialogues, and doing text analysis to explore these dialogues.</p>
+<div id="getting-the-dialogues" class="section level2">
+<h2>Getting the dialogues</h2>
+<div id="finding-a-source-for-the-dialogues" class="section level3">
+<h3>Finding a source for the dialogues</h3>
+<p>Apparently, contrarily to <a href="https://github.com/EmilHvitfeldt/friends"><em>Friends</em></a>, nobody developed a package containing the dialogues of <em>The Americans</em> yet. Therefore, I had to search online for these, and I found <a href="http://transcripts.foreverdreaming.org/viewforum.php?f=116">this website</a> that contains all of the dialogues and other text information (lyrics, stage directions, etc.), with one page for one episode.</p>
+<p>One problem with this website is that it provides the dialogues for season 1 to 4 but not for seasons 5 and 6. However, this is not a big issue. Another drawback of this website is that it doesn’t always provide information on who is talking. But it’s good enough for me, I just want to train, nothing matters here.</p>
+</div>
+<div id="importing-the-dialogues" class="section level3">
+<h3>Importing the dialogues</h3>
+<p>Let’s see how to import the dialogues with episode 1 of season 1. First of all, three packages will be needed:</p>
+<pre class="r"><code>library(rvest)
+library(tidyverse)</code></pre>
+<p>Now, we want to obtain the details of the page containing the dialogues for the first episode:</p>
+<pre class="r"><code>page &lt;- xml2::read_html(&quot;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;t=15871&quot;)</code></pre>
+<p>This condenses all HTML information into two lists. But we only need the dialogues. Therefore, we have to find the HTML argument that contains them. To do so, we can use the Inspector (Ctrl+Shift+C). When hovering elements on the webpage, we can see that there are several classes. Each line is embedded into <code>p</code>, but we notice that the whole text is in <code>div.postbody</code>. Therefore, we can select only those classes:</p>
+<pre class="r"><code>page_text &lt;- html_node(page, &quot;div.postbody&quot;) %&gt;%
+  html_children() %&gt;%
+  xml2::xml_find_all(&quot;//div[contains(@class, &#39;postbody&#39;)]&quot;) %&gt;%
+  html_text(trim = TRUE)
+
+page_text</code></pre>
+<pre><code>## [1] &quot;(adsbygoogle = window.adsbygoogle || []).push({});\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t[ Indistinct conversations ]\n[ Glasses clinking ]\n♪ Cryin&#39; on the corner, waitin&#39; in the rain ♪\n♪ I swear I&#39;ll never, ever wait again ♪\n♪ you gave me your word ♪\n♪ but words for you are lies ♪\n♪ darlin&#39;... ♪\nSeriously? The president?\nAt this level, there aren&#39;t that many people he can trust.\nHow do I know you&#39;re not making all this up?\n♪ ...my heart ♪\n♪ I&#39;m gonna swallow my tears ♪\n♪ I&#39;m gonna turn and leave you here ♪\nOh, my God.\n♪ All of my life I&#39;ve been waitin&#39; in the rain ♪\nSo handsome.\nThe things I&#39;m telling you...\nYou don&#39;t joke around about.\nIt could be dangerous.\nDangerous. Mm.\n♪ I&#39;m gonna harden my heart ♪\n♪ I&#39;m gonna swallow my tears ♪\nYou know, most people...\nThey get into their warm beds at night.\nThey have no idea what really goes on out there.\nThe sheer number of people working to destroy our way of life.\nYou... you know why I&#39;ve dedicated my life to stopping them?\nWhy?\nBecause...\n[ Groans ]\nBecause...\nYou ready for this?\nOh.\nOh.\n[ Breathing heavily ]\n[ Keys jingling ]\n[ Engine turns over ]\n[ Vehicle departs ]\n[ Man speaking indistinctly over p.A. System ]\nI don&#39;t know. Think about something else.\nTake deep breaths.\nIt&#39;s just...\nThey used to tell stories about this guy, you know?\nHe killed a lot of people.\nYou know how guys like him kill people?\nThey plan it for weeks, and they always come up from behind.\nFighting face-to-face, that&#39;s a different story.\nRob: I heard once he got in a bar fight with the entire Japanese olympic judo team.\nTook out four of &#39;em before the rest of &#39;em ran.\nWhich year? Because &#39;64 to &#39;72 were pussies.\nThey didn&#39;t even medal.\nWoman: I need to look out your living room window for a few minutes.\n[ Chain lock disengages ]\nPhilip: Time?\nRob: Minus 22.\nNo, what time is it?\nUm... It&#39;s 9:15.\nMm. The capitals are in L.A., start soon.\nYou follow the NHL?\nI like football.\nShe&#39;s in. Third floor, three east.\nHe&#39;s at the corner.\nPhilip: Immigration! We just want to talk!\n[ Russian accent ] Help! Help!\nHelp!\nDon&#39;t get too close!\n[ Fleetwood Mac&#39;s \&quot;Tusk\&quot; plays ]\nPhilip: Watch the corner!\nUgh!\n♪ Tusk ♪\n♪ tusk ♪\n[ Panting ]\n♪ Tusk ♪\n[ Music stops ]\n[ Bottle clatters ]\n[ Groans ]\nI know you&#39;re not supposed to kill me.\nI don&#39;t think you understand how unpopular you are.\nI could deliver you in a hundred pieces.\nThey&#39;d give me a separate medal for each one.\n[ \&quot;Tusk\&quot; resumes ]\n[ Tires screech ]\nHe&#39;s not police! He&#39;s not police! He&#39;s not police!\nYou have the right to remain silent!\nHe&#39;s not really police!\nHelp! Call for help! Call for help!\nAnything you say and do will... can and will be used against you in a court of law!\nOhh!\n[ Engine revs, tires screech ]\n♪ Why don&#39;t you tell me who&#39;s on the phone? ♪\n[ Tires screech ]\nHey, hey! Keep your eyes open.\nAll right. It&#39;s okay. Deep breaths.\nLook at me. Rob? Rob?\nKeep your eyes on me.\n[ Tires screech ]\n[ Breathing heavily ]\nHeavy bleeding, he&#39;s got 10, 15 minutes.\nArlington Methodist, then 66 to the beltway to the drop site?\nNo, we blew our whole window on the chase.\nWe won&#39;t make it.\nSo? Parkway to the beltway.\nHe dies, and 50/50 we miss the hand off anyway.\nNo, the mission comes first!\nI can help you. I can make you rich.\nShut up!\n[ Tires screech ]\nPhilip: You go in a John Doe.\nIf you live, do not go back to Boston.\n[ Siren wailing ]\nAssume they&#39;re on you.\nAll right? You got to walk from here.\nYou were trained to surmount any obstacle.\nGo!\n[ Breathing heavily ]\n[ Tires screech ]\n♪ Don&#39;t say that you love me ♪\nBack is clear.\nTime?\nMinus 7.\nThere&#39;s another way, please.\nListen to me. We can all sit down...\nShut up! [ Groans ]\n♪ Tusk ♪\n♪ just say that you want me ♪\n♪ don&#39;t tell me that you ♪\n♪ tusk ♪\n♪ real savage like ♪\nWhy is everyone so punctual in this business?\nCounter Intelligence is the place you wanna be right now Stan.\nI mean, what&#39;s it take to rob a bank?\nStick a couple fingers in your pocket and say, \&quot;give me all your money\&quot;?\nIn C.I, we&#39;re up against the most sophisticated enemy in the world.\nI&#39;ll tell you one good thing about bank robbers... they speak English.\nThey got me in beginning Russian four days a week.\nUgh. You got an ear for languages?\nAh, you know, I had a very attractive French teacher one year in high school. I got a B-plus.\nOh, coffee.\nAh, just what I need.\nWe getting started soon, there, boss?\nTimoshev isn&#39;t here. He&#39;s 20 minutes late.\nMaybe he had a little too much vodka last night.\nI have been working with him since he defected.\nHe hasn&#39;t been 20 seconds late for anything.\nWhere&#39;s he coming in from?\nI don&#39;t know.\nHe only deals with the director and the A.G.\nI don&#39;t even know where he stayed last night.\nMormon.\nSince Reagan got elected, he starts these meetings at 7:00 A.M.\nReagan&#39;s not a mormon.\nFundamentalist, whatever. The goal is the same... to wear down the enemy by waking up earlier than they do.\nWho&#39;s Timoshev?\nHe&#39;s this ex-KGB colonel.\nBlew the whistle on these Directorate \&quot;S\&quot; undercover agents supposedly hiding all over the U.S.\nSuper-secret identities... no one has any idea who they are.\nWhat, you don&#39;t buy it?\nThere&#39;s not a single piece of evidence.\nLook. You get these guys like Timoshev, right?\nThey come over.\nThey get these huge resettlement packages.\nWe&#39;re talking millions of dollars.\nSo, they say things to us to justify it.\nThey make up stories to make us happy.\nSuper-secret spies living next door.\nThey look like us, they speak better English than we do.\nAccording to Timoshev, they&#39;re not allowed to say a single word in Russian once they get here.\nI mean, come on. Someone&#39;s been reading too many spy novels.\nWe&#39;re talking figment of the imagination.\nYou understand you make any noise, I will kill you immediately.\n[ Gasps, coughs ]\nFBI paid me $3 million when I came over and more since as a consultant.\nYou can get twice that!\n$3 million as the most valued of defectors, a Directorate \&quot;S\&quot; officer.\nAnother $3 million for returning me.\nJust go to the FBI and tell them...\n[ gagging ]\nCar won&#39;t start!\nWe&#39;re gonna have to take the bus to the Metro.\nOh, dad.\nYeah?\nMaruk got two goals and an assist last night versus L.A.\n[ Water running ] Did they win?\nUh, no. It was a tie.\nI&#39;m not going in today, so you&#39;re gonna have to handle Portland rotary and call Swissair.\nDo you know how much they paid that asshole?\n$3 million.\nHenry was looking for his skateboard.\nIt&#39;s not in the garage, is it?\nNo.\n[ Water shuts off ]\nLet&#39;s go, Henry.\nHuh?\nBye.\nBye.\nBye, guys.\nWhat, no coffee for you?\nUh, no, thanks.\n[ Door opens ]\n[ Door closes ]\nWe have to get rid of him tonight.\nI just coded the message, I&#39;ll drop it on the way to work.\nYou don&#39;t have to stay here. He&#39;s secure in there.\nThere were witnesses. If they figure it out, I mean, they could be looking for him in a couple of hours.\nI&#39;m gonna stay. - Yeah, told you... we should have built that secret underground chamber in the basement.\nYou mean the wine cellar you wanted to put in under the laundry room?\nI did say it could have other uses.\nAnyway, $3 million?\nHe can buy himself a diamond-plated coffin.\n[ Children playing in distance ]\n[ Baby cooing ]\n[ Police radio chatter ]\n1-7. Show me on this location. Show me canvassing.\nDispatcher: Multiple callers, unknown direction of flight.\nWhat do you got?\nI got a female witness.\nShe saw a guy knock the victim down, grab the purse, and run this way.\nGive me that, uh... description one more time, please.\nWe didn&#39;t get a full description.\nMale Caucasian, black hair, unknown complexion, unknown age.\nAll right, if you do have a victim, have them respond to this location... north end of Dupont Circle.\nAll right, did you notify Parks?\n[ Police radio chatter ]\n[ Indistinct conversation ]\n[ Rhythmic punching ]\n[ Grunting ]\n[ Russian accent ] Again.\n[ Chuckles ]\nHarder. Focus.\nYeah.\nOkay. Again.\nSo, what we have?\nCaptain...\nI did not know you are back.\nYou two are working late.\nShe has great promise.\nWe are putting in extra work.\nLeave us.\nI will teach her how we do it in the field.\nGo.\nNow, my dear... again.\n[ Russian accent ] I am sorry, Captain.\nI&#39;m sorry.\nUse the contraction.\nI&#39;m sorry.\nNow... faster.\nUgh!\nWatch!\nDon&#39;t overcommit.\n[ Groans ]\n[ Grunting ]\nNyet!\n[ Fabric ripping ]\n[ Belt buckle clinking ]\n[ Screams ]\n[ Grunting ]\n[ Normal voice ] Remember me, Captain?\nHow&#39;s the game?\nUh, Jughead is in serious trouble.\nOkay, well, do some reading and some stirring for me, okay?\nPaige, what are you working on?\nSocial studies... a paper on how the Russians cheat on arms control.\nHmm. That&#39;s, uh, Henrickson, right?\nYep.\nYeah.\nI don&#39;t know how you can look at him all day with that... that harelip.\nMom, that&#39;s his handicap.\nSo, what&#39;s the trouble with these guys?\nWell, Betty and Veronica were hosting a charity drive, and...\nYeah?\nSo Jughead...\nPhilip: I&#39;m home!\nOh, dad!\nYeah?\nWe launched our rocket today in science.\nWow! Was it manned or unmanned?\nUnmanned.\nBut tomorrow, we&#39;re gonna give Commander Stafford a plaque to commemorate the mission.\nWell, I&#39;m sure he&#39;ll be very honored.\n[ Quietly ] Go look out the window.\n[ Exhaust fan running ]\nI made the drop in the park. No response.\nMaybe he can move in with us permanently.\nI can fix up the spare bedroom for him.\nI have a meeting later. We&#39;ll know more then.\nHenry: Holy sh1t!\nThat&#39;s the coolest car ever!\nHenry! Language!\nDon&#39;t fall in love with it.\nIt&#39;s only a rental until the Oldsmobile gets fixed.\nI said that word once, and you guys grounded me for a week.\n[ Indistinct conversations ]\nWhenever you&#39;re ready.\nHere we go.\nDad&#39;s gonna start this up right here, right now.\nIce-cream Olympics. Take your time.\nEyes on the cone.\nBe the cone.\nEyes... eyes on the cone. Don&#39;t feint too early.\nDon&#39;t feint too early. [ Chuckles ]\nKnow your distance. Know your distance.\nOh, no!\n[ Laughs ]\nAll right, Henry, you&#39;re up.\nWar... paint.\nHere we go.\nWar paint. Let me see your war face.\nSpike it.\nEyes on the cone.\nWhoa, whoa, whoa!\nEase up. Remember the training.\nOhh!\nThe big nose cone!\nMom, you&#39;re up.\nNo, thanks.\nCome on. Just a... just a...\nI don&#39;t want... no, thanks.\nLittle one? Come on. Let&#39;s see. Ohh!\n[ Snickers ]\nSorry.\nStop.\nMaybe we can have a Checkers round-robin when we get hone?\nUm, I&#39;m just dropping you guys off.\nI got to... got to meet a client.\nWhy are you meeting a client so late?\nHe&#39;s coming in on a late flight and wants to grab a drink.\nYou know, that&#39;s what business is all about, honey.\nAnyone can make travel arrangements, but you keep the executives happy, you keep the accounts.\n[ Doorbell rings ]\nHow have you been, Martha?\nFine, Clark. Would you like to come in?\nSo, referencing our meeting this evening... obviously, you understand it&#39;s been classified Top Secret by the the Internal Affairs Division of the Committee to oversee United States&#39; counterintelligence agencies.\nDo you swear to tell the truth, the whole truth, et cetera, et cetera?\nI do.\nGreat. So, big day at FBI Counterintelligence?\nYes, it was.\nObviously, we know most of it, but I just want to hear the details from you, because a crisis can provide an opportunity to uncover the leaks that we have been looking for in your office.\nSo just tell me what you saw.\nThank you.\nWell...\nI-I know that a man was kidnapped.\nHe was supposed to speak at a conference this morning, but he didn&#39;t show.\nMm-hmm.\nAnd did there appear to be a centralized response to the kidnapping?\nThey were in the secure vault all day.\nDid you get a look inside this time?\n[ Chuckles ]\nThey don&#39;t let me in there. And you know that.\nI know. I&#39;m sorry.\nPlease go on.\nUm... well, the man that they kidnapped was Russian.\nHe was someone very important in the KGB, I think.\nRight.\nBy early afternoon, they had tied it to a police report in northeast D.C. about a man who was kidnapped last night.\nAnd they have a vehicle description, &#39;77 Oldsmobile, gold, with D.C. plates and bumper stickers.\nAnd descriptions of the kidnappers?\nTwo men and a woman.\nOne of the men... average height with dark hair.\nAnd what specific actions did Agent Bartholomew order?\nExtra agents were sent to surveil the Soviet embassy, agents went out to all the ports and train stations.\nThey thought the Russians would take the man out of the country.\nHow would you best describe Agent Bartholomew&#39;s mood?\nAngry?\nUm... but I-I don&#39;t want to get him in trouble.\nNo, no, no, no. Not at all.\n[ Stammers, sighs ]\nOur counterintelligence units, they safeguard the security of our nation, Martha.\nSo, we have to safeguard their security.\n[ Button clicks ]\n[ Man moaning ]\nElizabeth: Tell me what you want next.\nMan: Oh. I don&#39;t know.\nHow about... this?\nOh, I... oh, I don&#39;t know. I don&#39;t... oh!\nOh, yes!\nYou mean to tell me a girl never put her finger up your ass before?\n[ Moaning ]\nThat&#39;s right.\nYeah, yeah. Now you got it.\nMm-hmm.\n[ Tape fast-forwards ]\n[ Button clicks ] Oh, God.\n[ Moaning ] Yeah. Yeah. Yeah. Oh!\n[ Tape fast-forwards ]\nThere&#39;s something...\nI mean, if I... if I were gonna see you again...\nI&#39;d want you to be a little...\nWhat?\nI don&#39;t want to hurt your feelings.\nTell me.\nBut just maybe...\nStronger, maybe?\nDo you know what the KGB is?\nUm... I&#39;ve heard of them.\nWell...\nWell, this weekend, I am giving $100,000 cash to a KGB defector who&#39;s coming to town to...\n[ tape stops ]\nThe Reagan administration revealed today that after a month-long review, it will honor the agreement with Iran that led to the release of the 52 American hostages.\nSo...\nFBI have the car description with the D.C. plates.\nThey haven&#39;t connected it to a stabbing victim at Arlington Methodist yet, but I don&#39;t think it will be long.\nThey&#39;re all over our guys at the embassy, who must have made the surveillance, which is why they can&#39;t get out to pick up my message or respond.\nSo, I think we have to assume, with the feds all over them like that, they&#39;re on full operational stand-down.\nWe should just take care of him ourselves.\nWhat&#39;s the rush?\nOn an operational stand-down, we&#39;re authorized to make our own decisions.\nYes, but why do you want to kill him so badly?\nI want him out of my house!\nHe&#39;s putting us all in danger, and they&#39;re just gonna kill him back in Moscow anyway.\nI think we should at least try and finish the mission the way it was assigned.\nOh, now you want to complete the mission the way it was assigned?\nI mean, you should have thought of that before, Philip.\nHe shouldn&#39;t even be here.\nWell, if you&#39;re that worried about him, maybe we could just defect ourselves.\nAt least we&#39;d be millionaires.\nHmm? We wouldn&#39;t have to worry about going to jail and leaving the kids all alone.\nA lot of our problems would just go away.\nPkew!\nThat&#39;s very funny.\nLet&#39;s see what we hear tomorrow.\n[ TV clicks off ]\n[ Indistinct conversations ]\nYou sure you don&#39;t want to come?\nHaven&#39;t even seen the new mall yet.\nIt&#39;s a mall.\nHenry: See you, ma.\nYeah, I know, but this one has fountains and skylights.\nBye, mom.\n[ Car door closes ]\nWhen we went to dinner last week, wasn&#39;t she wearing a sweater with a bunny rabbit on it?\nOh, my God.\n♪ Playing with the Queen of hearts ♪\n♪ knowin&#39; it ain&#39;t really smart ♪\nReally?\nJust call your parents.\nTell them you&#39;re sleeping at Lisa&#39;s house.\nDo you think I&#39;m gonna get in trouble?\n♪ Laying out another lie ♪\n♪ thinkin&#39; &#39;bout a life of crime ♪\n♪ &#39;cause that&#39;s what I&#39;ll have to do ♪\nThanks.\n♪ to keep me away from you ♪\n♪ honey ♪\n♪ you know it makes you mad ♪\n♪ why is everybody tellin&#39; everybody ♪\n♪ what you have done? ♪\n♪ baby ♪\n♪ I know it makes you sad ♪\n♪ but when they&#39;re handin&#39; out the heartaches ♪\n♪ you know you got to have you some ♪\n♪ playin&#39; with the Queen of hearts ♪\n♪ knowin&#39; it ain&#39;t really smart ♪\n♪ the joker ain&#39;t the only... ♪\nWhoa.\nI like that.\nYou look nice, darlin&#39;.\nYou want to come with me and Dee to shop for makeup after you pay for those?\nErrol, she&#39;s 13.\n13?\nI don&#39;t know, daddy.\nShe sure looks ready to me.\n[ Chuckles softly ]\n[ Sighs ]\nSo long, honey.\nThank you.\nMm-hmm.\nCome on.\nYou&#39;re, uh, getting older, so...\nI know, I know.\nIt&#39;s... it&#39;s no use fighting guys like that.\nOh, God, I wouldn&#39;t want you to.\n[ Timer dings ]\n[ Tires screech ]\nYou don&#39;t have to be a cowboy to wear cowboy boots.\nJaden says you do.\nPaige: No one wears cowboy boots anymore, dad.\nYou know, dad, she does have a point there.\nI met the new neighbors.\nWe&#39;re gonna over later to say hello.\nWhat, do you think I killed him?\nJust checking.\nStop.\nStop.\nYou&#39;re my wife.\nIs that right?\n\n(adsbygoogle = window.adsbygoogle || []).push({});\n[ Doorbell rings ]\nOh, hi. You came!\nJust for a second, to, uh, bring over brownies and welcome you to the neighborhood.\nWell, come in. Come in.\nCan I offer you guys a drink or...?\nPhilip: No, no, no, no, no.\nElizabeth: No.\nThis place is a mess.\nPlease, please, don&#39;t do anything.\nWe just wanted to bring over the brownies.\nI&#39;m so sorry.\nWe can come over and help.\nActually, Henry can come over all day tomorrow if you want.\nOh thank you. Um, this is my son Matthew.\nPhilip: Hi.\nDo you know where your father is?\nMatthew: Uh, he&#39;s upstairs.\nWhat, do we have visitors already?\nUh, yeah. This is Stan.\nHey. Phil Jennings.\nHow you doing? Stan Beeman.\nUh, my wife, Elizabeth, Paige, Henry.\nHi.\nHi.\nHey, Henry.\n[ Clears throat ] Hello.\nOoh, are those brownies?\nHomemade.\nMay I?\nMm.\nYour mom&#39;s a good cook?\nYes.\nOkay.\nI should&#39;ve taken them. Thank you. - Mmm.\nOh, that&#39;s a good brownie, hon.\nYeah.\nSo, this is a pretty good neighborhood we moved into, huh?\nPhilip: Wouldn&#39;t live anywhere else.\nYou know? Safe, clean. Commute to D.C.&#39;s not too bad.\nDo you work in the city?\nI do.\nWhat do... what do you do, Stan?\nI&#39;m an FBI agent.\nFBI? Wow! What... what, do you catch bank robbers and stuff?\nActually, I work in Counterintelligence now.\nCounterintel... that&#39;s... that&#39;s against spies, right?\nExactly.\nOh. I&#39;ll have to make sure I don&#39;t do any spying around here.\nOh, you better not, especially for those Russians.\nOh, yeah. They&#39;re the... they&#39;re the worst, right?\nOh, they certainly are, Philip.\nThey certainly are.\nIt&#39;s probably a coincidence, FBI agents have to live somewhere.\nOr they&#39;re onto us.\nAnd this is what?\nThe end game.\nThey&#39;re... they&#39;re trying to make us do something stupid.\nEither way, we get rid of Timoshev tonight.\nI almost did it myself this morning, but I thought you&#39;d be pissed.\nIf they are watching us, the last thing you want to do is kill Timoshev.\nThat&#39;s life in prison. That&#39;s no deals, nothing.\nWe take those risks every day, Philip.\nThat&#39;s what we do.\nMay... maybe there&#39;s another way.\nLook, maybe this is an... opportunity.\nMaybe this is the perfect time for us just to think about... living the life we&#39;ve been living but just really living it.\nJust... being us.\nWhat are you talking about?\nI&#39;m saying we might be blown.\nAnd I&#39;m saying if they are watching us, we can&#39;t kill Timoshev.\nI&#39;m also saying we are Philip and Elizabeth Jennings.\nWe have been for a very long time.\nSo why don&#39;t we get ahead of this and why don&#39;t we make the first move and offer ourselves to them?\nWe could get a lot of money...\n$3 million for Timoshev, $3 million for us.\nWe just get relocated, take the good life, and be happy.\nAre you joking?\nIs this a joke?\nNo.\nYou want to betray our country?\nWell, after everything we&#39;ve done, I don&#39;t think it&#39;s such a betrayal.\nDefecting to America?\nAmerica&#39;s not so bad. We&#39;ve been here a long time.\nWhat&#39;s... what&#39;s so bad about it, you know?\nThe electricity works all the time. Food&#39;s pretty great.\nThe closet space...\nIs that what you care about?\nNo, I care about everything.\nNot the Motherland!\nI do, but our family comes first.\nSo, Paige and Henry, uh...\nWhat exactly is your plan? - We&#39;d have a great life because we would have money.\nWhat would you tell them, Philip?\nThe truth.\nYou swore.\nWe swore we would never tell them!\nTo let them grow up and live their own lives.\nThey&#39;re not to be a part of this.\nThey&#39;re not to be a part of this.\nThey will be American, and you can&#39;t stand that.\nI see it every day.\nI&#39;m not finished with them yet.\nThey don&#39;t have to be regular Americans.\nThey can be socialists.\nThey&#39;re not gonna be socialists.\nThey can be trade-union activists.\nThis place doesn&#39;t turn out socialists.\nTo know that it was all a lie?\nThey would never speak to us again, Philip.\nAnd what are we even talking about?\nThere would be no future for any of us.\nThey would kill us all!\nThey&#39;d never find us.\nThey would never find us.\nHave you looked in our trunk?!\nHe was a fool.\nHe came back to give speeches.\nLeft clues about where he was staying.\nWe&#39;d... we&#39;d be more careful.\n[ Sighs ]\n[ Door opens ]\n[ Russian accent ] Colonel.\n[ Russian accent ] Come.\nPhilip...\nI&#39;d like you to meet Elizabeth.\nElizabeth... this is Philip.\nPleased to meet you.\nLikewise.\nZhukov: I&#39;ll leave you two to get acquainted.\nThere is so much to talk about.\nYour lives up until now.\nPhilip and Elizabeth&#39;s lives.\nNot the other ones... those should never be discussed.\nIt would be easy to believe in the Elizabeth who grew up in Chicago, Illinois, Philip, if you don&#39;t know any other story.\nElizabeth, you&#39;ll be less likely to make a slip one day if there is no other version of this man you&#39;re hiding away in the back of your mind.\nPlease.\nSit.\n[ Door closes ]\nWould you like some tea?\nYes. Thank you.\nPlease.\n[ Ringing ]\nMan: Arlington Methodist.\nCounty liaison.\nWoman: How can I help you?\nSergeant Vaugn, Fairfax Sheriff Department.\nI&#39;m looking for a John Doe... would have come in Thursday night.\nMale Caucasian, 5&#39;10\&quot;, knife wound to the stomach.\nLet me look.\nOh, I&#39;m sorry, Sergeant. He expired that night.\nOkay, thank you.\n[ Sighs ]\n[ Receiver clicks ]\nHey, neighbor!\nHey, Stan. How&#39;s the move-in coming?\nOh, you know, it&#39;s long way to go.\nYou want a beer?\nNo, thank you.\nBut I could actually use some jumper cables if you have them.\nMy wife&#39;s car didn&#39;t quite make the trip from St. Louis.\nSure, come on in.\nOh, great.\nYou sure no beer?\nOh, I&#39;d love to, but I got to go in to work.\nYou don&#39;t even get a day off to move in?\nYou know, we got this real sh1t storm brewing.\nLooks like I&#39;m gonna be working seven-day weeks for the foreseeable future.\nYou having car trouble?\nOh, nothing major... cracked PCV hose.\nThis is an Oldsmobile Delta, huh?\nYeah.\n&#39;77?\nMm-hmm.\nI wanted the Coupe. She wanted the Sedan.\nSo we settled on this with a V8.\nBeautiful styling with these stacked headlights.\nGM can&#39;t make these fast enough, huh?\nYeah, it&#39;s a great car.\nYou weren&#39;t, uh, tempted by one of those Japanese upstarts, huh?\nI don&#39;t think I&#39;d fit in one.\nOh, yeah, I hear you on that.\nOh, great. Thanks.\nYou bet.\nWell, I got to get back.\nOf course. After you.\nWhat&#39;s it called?\nA piroshki.\nIt&#39;s like a meat dumpling. They kind of like them.\nI kind of like them, too. They&#39;re juicy. They&#39;re doughy.\nAmador: Mr. Beeman.\nThis is Agent Gaad, my former deputy.\nHow you doing?\nHe&#39;s detailed to a CIA Counterintelligence task force at Langley.\nHe&#39;s going to bring them up to speed on Timoshev, and hopefully they can help us out.\nHi, Chris.\nFrank.\nAgent Beeman, do you think there&#39;s any chance that Timoshev is still alive?\nUh, he&#39;s been here about 10 minutes, Frank.\nWell, it&#39;s my understanding he has some special insight.\nYeah, my bank-robbery assignment, the last three years, I was undercover.\nUndercover? With who?\nA white-supremacist group out of Southern Arkansas.\n24 principals currently awaiting trial.\nNo sh1t. You were living it, the whole nine yards?\nYeah. I barely saw my family.\nThat&#39;s one thing we haven&#39;t had around here... someone with that mind-set.\nI thought you were here for your good looks.\nOn Timoshev, sir... when you&#39;re betrayed by one of your own...\nPsst. Hey.\nWhen you&#39;re betrayed by one of your own, you&#39;re not inclined to put him out of his misery fast.\nI would bet the Russians would go to considerable lengths to get him back there so they can look him in the eye before they blow his brains out.\nIf you grabbed him but you couldn&#39;t get him out of the country right away, where would you keep him?\nWell, I wouldn&#39;t take him to the embassy.\nI wouldn&#39;t want to get near any Russians, where we might be looking.\nUm, I wouldn&#39;t want to be on the street, as much as I could avoid it, or anywhere I didn&#39;t usually go.\nI would probably make a beeline to my house, to tell you the truth.\nIt&#39;s really the safest place you can be, strange as that may sound.\nAnd I would just follow my regular routine, keep him there till the heat died down.\nWell, if he&#39;s at somebody&#39;s house, we&#39;re never gonna find him.\nNo, I wouldn&#39;t think so, sir.\nWell, thanks.\nSo, were you, like, burning crosses and sh1t with those guys or like, \&quot;Heil Hitler\&quot;?\nIt was a little deeper than that.\nLike... like what?\nHey, dad, can we get a racing stripe on the Oldsmobile?\nUh, I don&#39;t think your mom would like that.\nWhy not?\nShe doesn&#39;t like new things.\n♪ The bombs bursting in air ♪\n♪ gave proof through the night ♪\n♪ that our flag was still there ♪\n♪ o say does that star-spangled banner ♪\n♪ yet wave ♪\n♪ o&#39;er the land of the free ♪\n♪ and the home of the brave? ♪\n[ Cheers and applause ]\nPrincipal: Falls Church middle school, please welcome a true American hero...\nCommander of Gemini 9 and Apollo 10, Astronaut Thomas P. Stafford.\n[ Cheers and applause ]\n[ Camera shutters clicking ]\nWhoo!\nListen.\nAah! [ Grunts ]\nYou&#39;re such a pain in the ass.\nI&#39;m trying to make a deal.\nCome on, we don&#39;t have much time.\nElizabeth: What&#39;s going on?\nI&#39;m taking him to our neighbor.\nYou are?\nYeah.\nI was gonna drive him out, hand him off further from home, but you seem to have taken the distributor cap.\nSo you were leaving me.\nI&#39;m gonna make a deal where you don&#39;t have to talk to the Americans if you don&#39;t want to, if you think that&#39;ll make you a traitor, but you will come with me and the kids.\nIt won&#39;t be exactly what you want, but you&#39;ll adjust.\nSo you&#39;re just deciding for both of us.\nYeah, one of us has to.\nWhy you?\nBecause we&#39;re running out of time!\nWhy can&#39;t we do things together?\nBecause I am a KGB officer!\nDon&#39;t you understand that, after all these years?\nI would... I would go to jail, I would die, I would lose everything before I would betray my country.\nNow I&#39;m finishing this.\nPhilip, don&#39;t!\nCome on!\n[ Coughing ]\nSorry. I never meant to hurt you.\nThey let us have our way with the cadets.\nIt was part of the job...\nA perk.\nPhilip: What are you talking about?\nWhat are you talking about?\nHow... how did you hurt her?\nHow did he hurt you?\n[ Tool clatters ]\nDo what you want with him.\nTake him to the Americans, if that&#39;s what you want.\n[ Choking ]\n[ Phil Collins&#39; \&quot;in the air tonight\&quot; plays ]\n♪ I can feel it ♪\n♪ coming in the air tonight ♪\n♪ oh, lord ♪\n♪ and I&#39;ve been waiting for this moment ♪\n♪ for all my life ♪\n♪ oh, lord ♪\n♪ can you feel it ♪\n♪ coming in the air tonight? ♪\n♪ oh, lord ♪\n♪ oh, lord ♪\n♪ well, if you told me ♪\n♪ you were drowning ♪\n♪ I would not lend a hand ♪\n♪ I&#39;ve seen your face before, my friend ♪\n♪ but I don&#39;t know if you know who I am ♪\n♪ well, I was there, and I saw what you did ♪\n♪ I saw it with my own two eyes ♪\n♪ so you can wipe off that grin ♪\n♪ I know where you&#39;ve been ♪\n♪ it&#39;s all been a pack of lies ♪\n♪ and I can feel it ♪\n♪ coming in the air tonight ♪\n♪ oh, lord ♪\n♪ well, I&#39;ve been waiting for this moment ♪\n♪ for all my life ♪\n♪ oh, lord ♪\n♪ I can feel it ♪\n♪ coming in the air tonight ♪\n♪ oh, lord ♪\n♪ well, I&#39;ve been waiting for this moment ♪\n♪ for all my life ♪\n♪ oh, lord ♪\n♪ I can feel it in the air tonight ♪\n♪ oh, lord ♪\n♪ oh, lord ♪\n♪ well, I&#39;ve been waiting for this moment ♪\n♪ for all my life ♪\n♪ oh, lord ♪\n♪ I can feel it ♪\n♪ coming in the air tonight ♪\n♪ oh, lord ♪\n♪ and I&#39;ve been waiting for this moment ♪\n♪ for all my life ♪\n♪ oh, lord ♪\n♪ I can feel it in the air tonight ♪\n♪ oh, lord ♪\n♪ oh, lord, oh, lord ♪\n♪ well, I&#39;ve been waiting for this moment ♪\n♪ for all my life ♪\n♪ oh, lord, oh, lord ♪\n♪ I can feel it in the air tonight ♪\n♪ oh, lord ♪\n♪ oh, lord, oh, lord, lord ♪\nGood.\n♪ I can feel it ♪\nNo, it&#39;s too swollen to hide.\n[ Indistinct conversation ]\nWe&#39;re gonna have to clean the trunk later.\nHenry: We made the planets.\nPhilip: And which planet did your class make?\nWe made the Sun and Earth.\nSun? No, sorry. This is the Sun.\nWell, that was the Earth, with the Moon, of course.\nBut did the Commander land on it?\nOn the Moon?\nYeah.\nUh, no, he didn&#39;t land on the Moon, but he got close to it.\nYou know, the Moon isn&#39;t everything.\nJust getting into space is a remarkable accomplishment.\n[ Telephone rings ]\nIt&#39;s true.\nPhilip: You better hustle off.\nHello?\n[ Indistinct conversation ]\nPaige: I want to go to the Moon.\nMe too. That&#39;d be awesome.\nWe got a 7:30 ice time.\nWhat are you doing up so early on a Sunday?\nOh, it&#39;s these crazy shifts I&#39;m working.\nI&#39;ve been up since 5:00.\nOuch.\nYeah, I might as well just skip sleeping altogether.\nRight?\nHow you doing, Henry?\nGood, how about you?\nGood, thanks.\nWhoa, what happened to your neck?\nUh, shaving.\nTwo band-aids? What are you, a butcher?\nI got to change my blades more often.\nYou know what you get your dad next Christmas?\nHenry: What?\nAn electric razor.\nOkay.\nHave a good practice.\nTake it easy.\nThanks.\nPaige: Mom?\nElizabeth: Yeah?\nCan we, uh, go to the drugstore?\nSure.\nI like that guy, Philip.\nReally? You do?\nYeah. I do.\nI mean, there&#39;s something a little...\nI don&#39;t know, there&#39;s something a little bit off about him, maybe.\nBut I think he&#39;s a good guy.\nSomething a little off?\nYeah, I don&#39;t know. Maybe.\nYou know, I actually have been feeling that, too.\nExcuse me.\nYou have?\nYeah, I mean, you don&#39;t have to spend three years with the Gold Legion to have instincts.\nIt&#39;s just kind of a vibe he gives off.\nYeah.\nRight?\nYou know, I was actually feeling it with Bill Westerly from the condo board, too.\nDid you get that from him?\nNo.\nYeah, when he was talking about the assessments, I was like, this guy is running drugs in this place.\nAnd the mailman, I just have kind of instinct, is a pimp.\nOkay, okay.\nOr something.\nI could never really...\nOkay, y-you made your point.\nYou&#39;re... honey, you&#39;re back in the regular world, okay, so you need to stop those alarm bells going off every 10 minutes.\nYou&#39;re officially now surrounded here by the most normal, boring people in the world.\nSo enjoy it.\nOkay, we&#39;ll enjoy it.\nOkay.\n[ April Wine&#39;s \&quot;Roller\&quot; plays ]\n[ Echoing ] ♪ yeah ♪\n♪ ooh ♪\n♪ all right ♪\n[ Whistles ]\n♪ Gonna catch a flight to Nevada ♪\n♪ leave her friends at home in L.A. ♪\n♪ seven come eleven or Blackjack ♪\n♪ Gamblin&#39; night and day, yeah ♪\n♪ &#39;cause she&#39;s a roller, now ♪\n♪ a high-roller baby, she is ♪\n♪ mm, she&#39;s a roller, yeah ♪\n♪ a high-roller baby ♪\n[ Groaning ]\n♪ all right, whoo ♪\nNo more little girls, or I&#39;ll be back, and I&#39;ll stick that in your heart.\n♪ Ooh, she likes to play... ♪\nGeneral Zhukov.\nWhere is the traitor?\nHe tried to escape. We killed him.\nYou missed the hand off. Your comrade died.\nNow the traitor is dead instead of in our hands.\nThe Centre is worried enough to send me here to see you.\nGeneral, I...\nPlease sit, Elizabeth.\nThank you.\nThe American people have elected a madman as their president.\nHe is expanding their military forces on a massive scale.\nHe is against nuclear arms-control agreements.\nHe makes no secret of his desire to destroy us.\nOur war is not so cold anymore, Elizabeth.\nWhat happens behind enemy lines will determine the outcome of this struggle.\nYou reported several times over the years about Philip.\nCan we trust him?\nYes. I was wrong.\nIt was nothing... a little... a phase in a person&#39;s life.\nSo he is not responsible for the mess this mission has become?\nI was the one at fault, General.\nI am very sorry.\nDon&#39;t let that happen again, Elizabeth.\nI may not be able to protect you if you need me.\nThese times bring out the worst in our people.\nI am fighting now against comrades in our own organization who are starting to act like they did in our darkest days.\nI understand.\nIf I am not here, you are to fight on.\nOur enemy is strong and capable.\nWe must meet the challenge.\nThe orders are going to change now.\nThe risks are going to be greater.\nYour comrade who died was a hero.\nWe are going to need more of those now.\nWe won&#39;t let you down, General.\nYou were just a child.\nIs there anything new in here?\nWe got a new State Police report.\nAnything on the weapon?\nNot yet.\n[ Sighs ]\n[ Keypad beeping ]\nOur deceased John Doe from Arlington Methodist is proving very difficult to track down.\nEither he&#39;s a KGB Directorate \&quot;S\&quot; officer who got killed while kidnapping Timoshev, or he&#39;s a drifter who got stabbed in a fight in Arlington.\n[ Keypad beeps, door opens ]\nHis picture&#39;s out to every police department in the country, but it&#39;s a needle in a...\nDon&#39;t say \&quot;haystack.\&quot;\nMr. Deputy Attorney General.\nThe Attorney General and I have just come from the White House.\nPresident Reagan is outraged that the KGB thinks it can kidnap someone with impunity on American soil.\nThe President has signed Top Secret Executive Order 2579, authorizing the Federal Bureau of Investigation Counterintelligence Office to take all necessary measures to neutralize Soviet Directorate \&quot;S\&quot; sleeper-cell agents in the continental United States.\nLadies and gentlemen, we are going to war.\nIt is a war that will be fought quietly, by the men and the woman in this room.\nIt will not be short.\nAnd it will not be easy.\nBut we have truth and justice on our side.\nAnd we will prevail.\n[ Sighs ]\nSo, why didn&#39;t you tell me about Timoshev?\nWe aren&#39;t supposed to talk about our other lives.\nIt wasn&#39;t really your other life.\nIt happened in training.\nIt was a long time ago. I put it behind me.\nThings are about to change, Philip.\nIt&#39;s gonna get uglier, more dangerous.\n[ Sighs ]\nWe&#39;ll be fine.\nDon&#39;t forget, we&#39;ve been doing this a long time.\nI was born in Smolensk.\nMy father died fighting the Nazis at Stalingrad when I was 2.\nThere was a picture of him in his uniform.\nHe was pale, with bushy eyebrows.\nHe was smiling, although, of course, he was going off to die.\nMy mother was a bookkeeper for the local Party Committee.\nMy name is... was... Nadezhda.\n[ Indistinct conversation ]\n[ Vehicle door closes ]\nThank you.\n[ Sighs ]\nMy God, the climate.\nYeah.\nIt&#39;s an air-conditioner.\nIs it cold air?\nYeah.\nOh, my God. [ Chuckles ]\n[ Sighs ]\n[ Chuckles ]\n[ Sighs ]\nI&#39;m not ready.\nNo, I... we&#39;re... supposed to be married now, that&#39;s all.\nThey&#39;ll expect us to have children, eventually.\nOr... I don&#39;t know... maybe you just... maybe you just don&#39;t find me attractive.\nWhat do you think so far?\nYou know, they tell you everything, but...\nI don&#39;t know... when you see it, it just seems... brighter.\nThere&#39;s a weakness in the people.\nI can feel it.\n[ Sighs ]\n[ Dog barks ]\n[ Fleetwood Mac&#39;s \&quot;Tusk\&quot; plays ]\n♪ Why don&#39;t you ask him ♪\n♪ if he&#39;s gonna stay? ♪\n♪ why don&#39;t you ask him ♪\n♪ if he&#39;s going awa-a-y? ♪\n♪ why don&#39;t you tell me ♪\n♪ what&#39;s going on? ♪\n♪ why don&#39;t you tell me ♪\n♪ who&#39;s on the phone? ♪\n♪ ooh, oh, oh, oh ♪\n[ Gun clicks ]&quot;</code></pre>
+<p>Now, <code>page_text</code> is a very long vector that contains all text information. However, everything is not important here: we don’t want to analyze the lyrics of the soundtrack, the stage directions, or the name of the person who is talking. The latter could be interesting if we had it for every sentence. However, we only have it occasionally, which makes it useless. To remove this irrelevant text, we will use <code>gsub()</code>, a base R function.</p>
+<pre class="r"><code>page_text_cleaned &lt;- page_text %&gt;%
+  gsub(&quot;♪♪&quot;, &quot;&quot;, .) %&gt;% # double music symbol
+  gsub(&quot;♪ [^♪]+♪&quot;, &quot;&quot;, .) %&gt;% # text between music symbol (= lyrics)
+  gsub(&quot;\\n&quot;, &quot; &quot;, .) %&gt;% # new line symbol
+  gsub(&quot;\\t&quot;, &quot; &quot;, .) %&gt;% # \t
+  gsub(&quot;\\[[^\\]]*\\]&quot;, &quot;&quot;, ., perl = TRUE) %&gt;% # text between brackets
+  gsub(&quot;\\([^\\)]*\\)&quot;, &quot;&quot;, ., perl = TRUE) %&gt;% # text between parenthesis
+  gsub(&quot;\\\\&quot;, &quot;&quot;, .) %&gt;% # backslash
+  gsub(&quot;\\(adsbygoogle = window.adsbygoogle \\|\\| \\).push\\(\\{\\}\\);&quot;, &quot;&quot;, .) %&gt;% # ads
+  gsub(&quot;Philip:&quot;, &quot;&quot;, .) %&gt;% 
+  gsub(&quot;Elizabeth:&quot;, &quot;&quot;, .) %&gt;%
+  gsub(&quot;Paige:&quot;, &quot;&quot;, .) %&gt;%
+  gsub(&quot;Henry:&quot;, &quot;&quot;, .) %&gt;%
+  gsub(&quot;Stan:&quot;, &quot;&quot;, .) </code></pre>
+<p>The text is now cleaned: most of the useless text was removed, and 99% of what’s left is the dialogues.</p>
+</div>
+<div id="generalizing-this-to-all-pages" class="section level3">
+<h3>Generalizing this to all pages</h3>
+<p>As I said before, there is a different page for each episode. How can we generalize the previous step to all these pages?</p>
+<p>Well, the code we used before will be the same once we have the HTML information of the episode page. The only problem here is that we must find a way to download this HTML information for all pages. We can notice that the URL addresses are almost identical for all episodes:</p>
+<p>Episode 1, season 1: <em><a href="http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;t=15871" class="uri">http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;t=15871</a></em></p>
+<p>Episode 2, season 1: <em><a href="http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;t=15872" class="uri">http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;t=15872</a></em></p>
+<p>We see here that only the argument <code>t</code> differs between those addresses. If we could collect of the values of <code>t</code> for all the pages, we could then collect the HTML information very easily. There is now another problem: what are the values of <code>t</code>? We could suppose that we just need to add 1 to the previous number (15871, 15872, 15873…). However, for episode 12 in season 4 for example, the value of <code>t</code> is 27447. Therefore, we must find another way to collect these <code>t</code> values.</p>
+<p><strong>Collecting <em>t</em> values</strong></p>
+<p>To do so, we use the Inspector once again, but this time on the home page, not on an episode page. Exploring the HTML tags, we notice that the <code>t</code> value is displayed in the class <code>a.topictitle</code>, among other information. Using the same code as before, we collect the text contained in this class, and extract the <code>t</code> value:</p>
+<pre class="r"><code># First we get the HTML information of the home page (menu 1)
+menu_1 &lt;- read_html(&quot;http://transcripts.foreverdreaming.org/viewforum.php?f=116&quot;)
+
+# Then we obtain the text in this specific class and keep only the t value
+episode_ids_1 &lt;- html_node(menu_1, &quot;body&quot;) %&gt;%
+  html_children() %&gt;%
+  xml2::xml_find_all(&quot;//a[contains(@class, &#39;topictitle&#39;)]&quot;) %&gt;%
+  sub(&#39;.*f=116&amp;amp;t= *(.*?) *&amp;amp;sid.*&#39;, &quot;\\1&quot;, .) %&gt;%
+  as.numeric()</code></pre>
+<p>One final step for this first menu is to remove the two first <code>t</code> values (or ids), since they correspond to “Online Store” and “Board Updates” and not to episodes.</p>
+<pre class="r"><code>episode_ids_1 &lt;- episode_ids_1[-c(1, 2)]</code></pre>
+<p>After repeating this operation for the other two menus, we finally obtain all the episode ids:</p>
+<pre class="r"><code>### Second menu
+menu_2 &lt;- read_html(&quot;http://transcripts.foreverdreaming.org/viewforum.php?f=116&amp;start=25&quot;)
+
+episode_ids_2 &lt;- html_node(menu_2, &quot;body&quot;) %&gt;%
+  html_children() %&gt;%
+  xml2::xml_find_all(&quot;//a[contains(@class, &#39;topictitle&#39;)]&quot;) %&gt;%
+  sub(&#39;.*f=116&amp;amp;t= *(.*?) *&amp;amp;sid.*&#39;, &quot;\\1&quot;, .) %&gt;%
+  as.numeric() 
+
+episode_ids_2 &lt;- episode_ids_2[-c(1, 2)]
+
+### Third menu
+
+menu_3 &lt;- read_html(&quot;http://transcripts.foreverdreaming.org/viewforum.php?f=116&amp;start=50&quot;)
+
+episode_ids_3 &lt;- html_node(menu_3, &quot;body&quot;) %&gt;%
+  html_children() %&gt;%
+  xml2::xml_find_all(&quot;//a[contains(@class, &#39;topictitle&#39;)]&quot;) %&gt;%
+  sub(&#39;.*f=116&amp;amp;t= *(.*?) *&amp;amp;sid.*&#39;, &quot;\\1&quot;, .) %&gt;%
+  as.numeric()
+
+episode_ids_3 &lt;- episode_ids_3[-c(1, 2)]
+
+
+### All episodes ids
+episode_ids_total &lt;- c(episode_ids_1, episode_ids_2, episode_ids_3)</code></pre>
+<p><strong>Getting the dialogues for all episodes</strong></p>
+<p>The final step in this first part (obtaining the dialogues) is to get the dialogues for all pages. We already have the code for that, it is the first thing we made. Now, we only have to apply this code for each page, i.e for each episode id we got. To do so, we can use the <code>{purrr}</code> package (contained in the <code>{tidyverse}</code>):</p>
+<pre class="r"><code>list_dialogues &lt;- purrr::map(episode_ids_total, .f = function(x) {
+  
+  page &lt;- read_html(paste0(&quot;http://transcripts.foreverdreaming.org/viewtopic.php?f=116&amp;t=&quot;, x))
+  
+  page_text &lt;- html_node(page, &quot;div.postbody&quot;) %&gt;%
+    html_children() %&gt;%
+    xml2::xml_find_all(&quot;//div[contains(@class, &#39;postbody&#39;)]&quot;) %&gt;%
+    html_text(trim = TRUE)
+ 
+  page_text_cleaned &lt;- page_text %&gt;%
+    gsub(&quot;♪♪&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;♪ [^♪]+♪&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;\\n&quot;, &quot; &quot;, .) %&gt;%
+    gsub(&quot;\\t&quot;, &quot; &quot;, .) %&gt;%
+    gsub(&quot;\\[[^\\]]*\\]&quot;, &quot;&quot;, ., perl = TRUE) %&gt;%
+    gsub(&quot;\\([^\\)]*\\)&quot;, &quot;&quot;, ., perl = TRUE) %&gt;%
+    gsub(&quot;\\\\&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;\\(adsbygoogle = window.adsbygoogle \\|\\| \\).push\\(\\{\\}\\);&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;Philip:&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;Elizabeth:&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;Paige:&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;Henry:&quot;, &quot;&quot;, .) %&gt;%
+    gsub(&quot;Stan:&quot;, &quot;&quot;, .) 
+  
+  return(page_text_cleaned)
+  
+})</code></pre>
+<p>We used the function <code>map()</code>, which takes two arguments: a list as input, and a function. The list we used is the list of all episode ids. The function is a custom function: it gathers the code we wrote previously and runs it for each episode id.</p>
+<p>We now have <code>list_dialogues</code>, a list that contains 52 big character vectors (one per episode), corresponding to all the dialogues of the episodes.</p>
+</div>
+</div>
+<div id="analyzing-the-dialogues" class="section level2">
+<h2>Analyzing the dialogues</h2>
+<p>Now that we have all the dialogues for each episode, we can analyze them with the <code>{tidytext}</code> package. First, we must convert the big character vectors into tidy tibbles, i.e dataframes with one row per word. This can be done with <code>unnest_tokens()</code>, that we use in <code>map()</code> once again:</p>
+<pre class="r"><code>library(tidytext)
+
+list_dialogues_words &lt;- map(list_dialogues, .f = function(x) {
+  as_tibble(x) %&gt;%
+    unnest_tokens(word, value)
+})  </code></pre>
+<div id="number-of-words-per-episode-per-season" class="section level3">
+<h3>Number of words per episode per season</h3>
+<p>With this data, we can firstly see the number of words in each episode. To do so, we compute the number of rows (i.e words) per episode and then we plot them as lines to see the evolution throughout a season.</p>
+<pre class="r"><code>map(list_dialogues_words, nrow) %&gt;%
+  unlist() %&gt;%
+  as_tibble() %&gt;%
+  tibble::rowid_to_column() %&gt;%
+  mutate(
+    season = case_when(
+      rowid %in% c(1:13) ~ 1,
+      rowid %in% c(14:26) ~ 2,
+      rowid %in% c(27:39) ~ 3,
+      rowid %in% c(40:52) ~ 4
+    )
+  ) %&gt;%
+  group_by(season) %&gt;%
+  mutate(rowid = c(1:13)) %&gt;%
+  ungroup() %&gt;%
+  ggplot(aes(x = rowid, y = value, color = factor(season))) + 
+  geom_line() +
+  scale_x_discrete(name = &quot;Episode number&quot;, limits = factor(c(1:13))) +
+  scale_y_continuous(name = &quot;Number of words&quot;) +
+  ggtitle(&quot;Number of words per episode per season&quot;) +
+  scale_color_discrete(name = &quot;Season&quot;)</code></pre>
+<p><img src="/post/the-americans/2020-10-04-text-analysis-of-the-dialogues-in-the-americans/index.en_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>We can see that the first episode of the first season is by far the one with the most words. Maybe because the first one introduces us to the situation, the plot? It is also hard to verify that we didn’t remove words by mistake in the dialogues of the other episodes.</p>
+</div>
+<div id="what-words-are-the-most-said" class="section level3">
+<h3>What words are the most said?</h3>
+<p>The <code>{tidytext}</code> package also allows us to identify the words that are the most used in the show. We will focus here on the first season but the code below can be easily adapted to analyze the other seasons.</p>
+<p>An important item provided by <code>{tidytext}</code> is a dataset of stop words. Stop words are words that are very common in a language, and therefore that are irrelevant when doing text analysis. For example, “across”, “after” or “actually” do not tell anything about a text because they are too common. Also, onomatopoeia (such as “yeah” or “ugh”) do not carry much information.</p>
+<p>To analyze the dialogues, we will remove those stop words and onomatopoeia using <code>anti_join()</code>. Then, we count the number of occurences and plot the results to see what words were the most used.</p>
+<pre class="r"><code>onomatopoeia &lt;- c(&quot;hey&quot;, &quot;uh&quot;, &quot;um&quot;, &quot;yeah&quot;, &quot;uhh&quot;, &quot;hmm&quot;)
+
+list_dialogues_words[[1]] %&gt;%
+  filter(!(word %in% onomatopoeia)) %&gt;%
+  anti_join(stop_words, by = c(&quot;word&quot; = &quot;word&quot;)) %&gt;%
+  count(word, sort = TRUE) %&gt;% 
+  filter(n &gt; 5) %&gt;%
+  mutate(word = reorder(word, n)) %&gt;%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  geom_text(aes(label = n), nudge_y = 10) +
+  ggtitle(&quot;Most said words in episode 1 of season 1&quot;)</code></pre>
+<p><img src="/post/the-americans/2020-10-04-text-analysis-of-the-dialogues-in-the-americans/index.en_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>We could also do this for the whole first season:</p>
+<pre class="r"><code>list_dialogues_words[1:13] %&gt;%
+  unlist() %&gt;%
+  as_tibble() %&gt;%
+  rename(&quot;word&quot; = &quot;value&quot;) %&gt;%
+  filter(!(word %in% onomatopoeia)) %&gt;%
+  anti_join(stop_words, by = c(&quot;word&quot; = &quot;word&quot;)) %&gt;%
+  count(word, sort = TRUE) %&gt;%
+  filter(n &gt; 50) %&gt;%
+  mutate(word = reorder(word, n)) %&gt;%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  geom_text(aes(label = n), nudge_y = 10) +
+  ggtitle(&quot;Most said words in season 1&quot;)</code></pre>
+<p><img src="/post/the-americans/2020-10-04-text-analysis-of-the-dialogues-in-the-americans/index.en_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>As we could expect, KGB, FBI and agent are in the top 15. Philip is also much more present than Elizabeth.</p>
+</div>
+<div id="sentiment-analysis" class="section level3">
+<h3>Sentiment analysis</h3>
+<p>Finally, we can wonder if those words carry more positive or negative messages. Indeed, <code>{tidytext}</code> also provides a dataset indicating if a word is positive or negative (or neutral). Therefore, we can count the number of positive and negative words in each episode.</p>
+<pre class="r"><code>dialogues_sentiment &lt;- map_dfr(list_dialogues_words, function(x) {
+  x %&gt;%
+    inner_join(tidytext::sentiments) %&gt;%
+    count(sentiment)
+}) %&gt;%
+  mutate(
+    season = rep(c(1:4), each = 26),
+    episode = rep(rep(1:13, each = 2), times = 4)
+  )</code></pre>
+<p>Then we can plot the evolution of this number during the four seasons:</p>
+<pre class="r"><code>dialogues_sentiment %&gt;%
+  ggplot(aes(x = episode, y = n, color = factor(sentiment))) + 
+  geom_line() +
+  scale_x_discrete(name = &quot;Episode number&quot;, limits = factor(c(1:13))) +
+  scale_y_continuous(name = &quot;Number of words&quot;) +
+  ggtitle(paste0(&quot;Number of positive and negative words per episode and per season&quot;)) +
+  facet_wrap(~ season) +
+  scale_color_discrete(&quot;Sentiment&quot;)</code></pre>
+<p><img src="/post/the-americans/2020-10-04-text-analysis-of-the-dialogues-in-the-americans/index.en_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>And finally, we can determine the positive and negative words that are the most said in the first season:</p>
+<pre class="r"><code>list_dialogues_words[1:13] %&gt;%
+  unlist() %&gt;%
+  as_tibble() %&gt;%
+  rename(&quot;word&quot; = &quot;value&quot;) %&gt;%
+  inner_join(tidytext::sentiments) %&gt;%
+  group_by(word) %&gt;%
+  mutate(n = n()) %&gt;%
+  ungroup() %&gt;%
+  distinct() %&gt;%
+  top_n(30) %&gt;%
+  mutate(word = reorder(word, n)) %&gt;%
+  ggplot(aes(word, n, fill = sentiment)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  facet_wrap(~ sentiment, scales = &quot;free_y&quot;) +
+  geom_text(aes(label = n), nudge_y = 10) + 
+  ggtitle(&quot;Positive and negative words most used in season 1&quot;)</code></pre>
+<p><img src="/post/the-americans/2020-10-04-text-analysis-of-the-dialogues-in-the-americans/index.en_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Overall I think the advice of Ryan Timpe is very good: side projects (humorous or not) are very useful to learn new skills in R. To write this blog post, I had to learn how to scrape the dialogues from a website with <code>{rvest}</code> and how to use the <code>{tidytext}</code> package. I hope this was useful to you too!</p>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/the-americans/&amp;text=Text%20analysis%20of%20the%20dialogues%20in%20&amp;#34;The%20Americans&amp;#34;" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/the-americans/&amp;t=Text%20analysis%20of%20the%20dialogues%20in%20&amp;#34;The%20Americans&amp;#34;" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Text%20analysis%20of%20the%20dialogues%20in%20&amp;#34;The%20Americans&amp;#34;&amp;body=/post/the-americans/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/the-americans/&amp;title=Text%20analysis%20of%20the%20dialogues%20in%20&amp;#34;The%20Americans&amp;#34;" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/etienne/avatar_huac7c08db1ead95d4a130a43e612684a0_1725955_270x270_fill_lanczos_center_2.png" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/"></a></h5>
+      <h6 class="card-subtitle">PhD Student in Economics</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:etienne.bacher@orange.fr" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/BacherEtienne" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/etiennebacher" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+<section id="comments">
+  <script src="https://utteranc.es/client.js"
+        repo="etiennebacher/personal_website"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/project/assemblr/">assemblr</a></li>
+      
+      <li><a href="/post/tips-and-tricks-r-markdown/tips-and-tricks-r-markdown/">Writing a Master&#39;s thesis with R Markdown and Bookdown</a></li>
+      
+      <li><a href="/post/code-doesnt-work/what-to-do-when-your-code-does-not-work/">What to do when your code doesn&#39;t work?</a></li>
+      
+      <li><a href="/post/my-shiny-app/my-shiny-app/">My application for the Shiny Contest (2020)</a></li>
+      
+      <li><a href="/post/my-favorite-shortcuts/my-favorite-shortcuts-in-rstudio/">My favorite shortcuts in RStudio</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.06d6e018e3cce4f0b580a360496c2d93.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  
+  <p class="powered-by">
+    <a href="/license/">LICENSE: CC-BY-SA <br> <i class="fab fa-creative-commons fa-2x"></i><i class="fab fa-creative-commons-by fa-2x"></i><i class="fab fa-creative-commons-sa fa-2x"></i> </a><br>
+  </p>
+  
+
+  <p class="powered-by">
+    © Etienne Bacher 2020 &middot; 
+
+    Made with the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package, and the 
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
