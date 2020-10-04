@@ -100,7 +100,7 @@ Episode 1, season 1: *http://transcripts.foreverdreaming.org/viewtopic.php?f=116
 
 Episode 2, season 1: *http://transcripts.foreverdreaming.org/viewtopic.php?f=116&t=15872*
 
-We see here that only the argument `t` differs between those addresses. If we could collect of the values of `t` for all the pages, we could then collect the HTML information very easily. There is now another problem: what are the values of `t`? We could suppose that we just need to add 1 to the previous number (15871, 15872, 15873...). However, for episode 12 in season 4 for example, the value of `t` is 27447. Therefore, we must find another way to collect these `t` values.
+We see here that only the argument `t` differs between those addresses. If we could collect all the values of `t` for all the pages, we could then collect the HTML information very easily. There is now another problem: what are the values of `t`? We could suppose that we just need to add 1 to the previous number (15871, 15872, 15873...). However, for episode 12 in season 4 for example, the value of `t` is 27447. Therefore, we must find another way to collect these `t` values.
 
 **Collect *t* values**
 
