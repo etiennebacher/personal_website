@@ -6,7 +6,8 @@ body {
 }
 
 .navbar {
-  min-height: 100px !important;
+  min-height: 50px !important;
+  height: 65px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,15 +117,15 @@ a.nav-link:hover:after {
 /* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
 
 pre, code {
-	color: #508991;
-	background-color: #fff;
+	color: #416c72;
+	background-color: #eaeaea;
 }
 
 pre {
   border: 1px solid #fff;
   box-shadow: 5px 5px 5px #eee;
   padding: 0.25em;
-  background: #fff;
+  background: #eaeaea;
   overflow-x: auto;
   border-radius: 0px; /*undo rounded corners*/
 }
