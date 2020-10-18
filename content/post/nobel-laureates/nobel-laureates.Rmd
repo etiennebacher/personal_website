@@ -1,5 +1,5 @@
 ---
-title: Visualize the Nobel laureates per country
+title: Visualize data on Nobel laureates per country
 author: Etienne Bacher
 date: '2020-10-18'
 lastmod: '2020-10-18'
