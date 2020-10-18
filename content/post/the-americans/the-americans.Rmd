@@ -346,3 +346,16 @@ list_dialogues_words[1:13] %>%
 Overall I think the advice of Ryan Timpe is very good: side projects (humorous or not) are very useful to learn new skills in R. To write this blog post, I had to learn how to scrape the dialogues from a website with `{rvest}` and how to use the `{tidytext}` package. I hope this was useful to you too!
 
 You can find all the code used in [this dedicated repo](https://github.com/etiennebacher/The-Americans).
+
+
+<details>
+<summary>
+Session Info
+</summary>
+This is my session info, so that you can see the versions of packages used. This is useful if the results in my post are no longer reproducible because packages changed. The packages with a star (*) are those explicitely called in the script.
+
+```{r, echo = FALSE}
+sessioninfo::session_info()
+```
+
+</details>

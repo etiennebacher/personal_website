@@ -441,3 +441,16 @@ graph export Histogram1.pdf,  replace
 </details>
 
 That's it! In this first post, you have seen how to import, clean and tidy datasets, and how to make some descriptive statistics and some plots. I hope this was helpful to you!
+
+
+<details>
+<summary>
+Session Info
+</summary>
+This is my session info, so that you can see the versions of packages used. This is useful if the results in my post are no longer reproducible because packages changed. The packages with a star (*) are those explicitely called in the script.
+
+```{r, echo = FALSE}
+sessioninfo::session_info()
+```
+
+</details>

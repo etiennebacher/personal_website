@@ -333,6 +333,17 @@ And that's it! I used data about Nobel laureates to present a few plots and maps
 I hope you enjoyed it!
 
 
+<details>
+<summary>
+Session Info
+</summary>
+This is my session info, so that you can see the versions of packages used. This is useful if the results in my post are no longer reproducible because packages changed. The packages with a star (*) are those explicitely called in the script.
+
+```{r, echo = FALSE}
+sessioninfo::session_info()
+```
+
+</details>
 
 
 
