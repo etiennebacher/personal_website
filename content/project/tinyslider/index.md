@@ -13,3 +13,4 @@ tags:
   - R
 ---
 
+This package adapts `tiny-slider.js` into R to create carousels in interactive situations, such as Shiny apps or HTML documents. See more information on `{tinyslider}` [here](https://tinyslider.etiennebacher.com).

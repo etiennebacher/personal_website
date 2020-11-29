@@ -13,3 +13,4 @@ tags:
   - R
 ---
 
+This package allows to create a webpage easily to store the documentation of an R package. See more information on `{docsifier}` [here](https://docsifier.etiennebacher.com).
