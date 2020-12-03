@@ -120,7 +120,14 @@ head(anscombe)
 <div id="use-details" class="section level2">
 <h2>Use <code>&lt;details&gt;</code></h2>
 <p>Finally, it is also possible to create chunks that are hidden by default but can be expanded by the user. This is particularly useful if you want to provide the user a reference. For instance, if you’re trying to teach a new language, it might be helpful to provide code that the user already knows, without displaying it by default.</p>
-<p>Here’s an example:</p>
+<p>Here’s an example. We create the “expanding zone” below with:</p>
+<pre><code>&lt;details&gt;
+&lt;summary&gt; Stata &lt;/summary&gt;
+Here, I put some Stata code hidden so that the user can compare if necessary:
+```stata 
+regress y x
+```
+&lt;/details&gt;</code></pre>
 <pre class="r"><code># Here I&#39;m teaching R
 lm(mpg ~ drat, data = mtcars)</code></pre>
 <details>

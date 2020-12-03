@@ -110,7 +110,18 @@ head(anscombe)
 
 Finally, it is also possible to create chunks that are hidden by default but can be expanded by the user. This is particularly useful if you want to provide the user a reference. For instance, if you're trying to teach a new language, it might be helpful to provide code that the user already knows,  without displaying it by default.
 
-Here's an example:
+
+Here's an example. We create the "expanding zone" below with:
+
+````
+<details>
+<summary> Stata </summary>
+Here, I put some Stata code hidden so that the user can compare if necessary:
+```stata `r ''`
+regress y x
+```
+</details>
+````
 
 
 ```{r, eval=FALSE}
